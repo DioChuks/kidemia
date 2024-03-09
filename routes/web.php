@@ -24,3 +24,17 @@ Route::get('/take-test', function () {
 Route::get('/loading', function () {
     return view('loading');
 });
+
+Route::get('/getting-ready', function () {
+    return view('dashboard.readyScreen');
+});
+
+Route::get('/pick-subject', function () {
+    return view('dashboard.pickSubject');
+});
+
+Route::get('/pick-topic', function () {
+    return view('dashboard.pickTopic');
+});
+
+require __DIR__.'/auth.php';

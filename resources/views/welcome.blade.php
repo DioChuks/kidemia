@@ -21,7 +21,7 @@
             <div class="top-container">
                 <div class="top-box">
                     <div class="top-heading">
-                        <h1 class="top-title">Welcome Delilah</h1>
+                        <h1 class="top-title">Welcome {{ $name ?? 'to Kidemia' }}</h1>
                         <p class="top-subtitle">What would you like to do?</p>
                     </div>
                     <div class="top-buttons">

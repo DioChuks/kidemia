@@ -1,7 +1,6 @@
 import './bootstrap';
 
 const preloader = document.querySelector('.preloader');
-const load = document.querySelector('.load');
 
 const app = document.getElementById('app');
 
