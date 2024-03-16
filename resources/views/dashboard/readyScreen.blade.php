@@ -2,10 +2,10 @@
 
 <body>
     <x-preloader />
-    <div id="app">
+    <div id="app" class="hidden">
         <div class="ready-wrapper">
             <div class="abs-btn-box">
-                <a href="#" class="btn btn-primary"><- Back</a>
+                <a href="{{ route('pick.topic')}}" class="btn btn-primary"><- Back</a>
             </div>
             <div class="ready-info">
                 <div class="ready-info-box">
@@ -52,6 +52,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('blur', () => {
+            console.log('u left me, now i take ur everything from you!');
+        })
+    </script>
 </body>
 
 </html>
