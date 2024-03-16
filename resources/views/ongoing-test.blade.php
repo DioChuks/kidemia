@@ -4,7 +4,7 @@
     <x-preloader />
     <div id="app" class="hidden">
         <div class="w-full h-max-screen bg-brand-white">
-            <form class="h-full bg-brandWhite">
+            <form class="h-full flex flex-col justify-between gap-20 bg-brandWhite">
                 <div class="w-full flex justify-between items-center ongoing-test-head">
                     <div class="img-box">
                         <img src="{{ asset('images/logo3.png') }}" alt="alt-img" />
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="questionNumberBox" class="h-half flex flex-col justify-around">
+                <div id="questionNumberBox" class="h-half flex flex-col justify-between">
                     <div id="questionBtnBox" class="w-full flex justify-evenly items-center">
                         <button class="btn bg-light-wine text-wine border border-white" id="previousBtn"><- Previous
                                 </button>
