@@ -91,12 +91,16 @@ openModalBtn.addEventListener("click", (e) => {
             });
     } else {
         const vMsg = document.getElementById("validationMsg");
-        vMsg.style.color = "red";
-        vMsg.innerText = "Please select at least one topic!👀";
-
-        // clear msg
-        setTimeout(() => {
-            vMsg.innerText = "";
-        }, 2000);
+        if (!vMsg) {
+            prompt("Are you sure it's okay to submit?🧐");
+            return;
+        } else {
+            vMsg.style.color = "red";
+            vMsg.innerText = "Please select at least one topic!👀";
+            // clear msg
+            setTimeout(() => {
+                vMsg.innerText = "";
+            }, 2000);
+        }
     }
 });
