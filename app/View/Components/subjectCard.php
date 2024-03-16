@@ -14,7 +14,8 @@ class subjectCard extends Component
     public function __construct(
         public string $logo,
         public string $title,
-        public Int $topicAmount
+        public Int $topicAmount,
+        public Int $id,
     )
     {
         //

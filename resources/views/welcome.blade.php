@@ -1,43 +1,43 @@
 @include('partials.header')
 <body>
     <x-preloader />
-    <div id="app">
+    <div id="app" class="hidden">
         <div class="top-section">
-            <header class="header">
+            <header class="flex justify-between items-center header">
                 <div class="logo">
-                    <img src="{{ asset('images/logo.png') }}" alt="Kidemia">
+                    <img src="{{ asset('images/logo.png') }}" alt="Kidemia" class="w-inherit h-inherit" />
                 </div>
-                <nav class="nav">
-                    <ul>
+                <nav class="flex items-center nav">
+                    <ul class="flex items-center">
                         <li class="nav-item"><a href="#">Pricing</a></li>
                         <li class="nav-item"><a href="#">Scheme</a></li>
                         <li class="nav-item"><a href="#">Dashboard</a></li>
                     </ul>
                     <ul>
-                        <li class="nav-item"><a href="#"><img src="{{ asset('images/Ellipse 1.svg') }}" alt="User"></a></li>
+                        <li class="nav-item"><a href="#"><img src="{{ asset('images/Ellipse 1.svg') }}" alt="User" /></a></li>
                     </ul>
                 </nav>
             </header>
-            <div class="top-container">
-                <div class="top-box">
+            <div class="flex justify-center items-center flex-col top-container">
+                <div class="flex flex-col text-center top-box">
                     <div class="top-heading">
-                        <h1 class="top-title">Welcome {{ $name ?? 'to Kidemia' }}</h1>
-                        <p class="top-subtitle">What would you like to do?</p>
+                        <h1 class="whitespace-no overflow-hidden top-title">Welcome {{ $name ?? 'to Kidemia' }}</h1>
+                        <p class="whitespace-no overflow-hidden top-subtitle">What would you like to do?</p>
                     </div>
-                    <div class="top-buttons">
-                        <button class="btn btn-primary">Take a test</button>
+                    <div class="flex top-buttons">
+                        <a href="{{route('take.test') }}" class="btn btn-primary">Take a test</a>
                         <button class="btn btn-primary">Take an exam</button>
                     </div>
                 </div>
             </div>
             <main>
-                <div class="performance-report">
+                <div class="w-full flex flex-col justify-around items-center performance-report">
                     <div class="report-heading">
                         <h1 class="report-title">Performance Report Summary</h1>
                     </div>
-                    <div class="report-chart">
-                        <div class="report-box">
-                            <div class="piechart-progress" style="--progress:35">
+                    <div class="flex justify-around items-center w-half text-center report-chart">
+                        <div class="flex flex-col items-center report-box">
+                            <div class="flex rounded-full piechart-progress" style="--progress:35">
                                 <div class="whitespace">
                                     <div class="progress-number">35%
                                     </div>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="report-box">
-                            <div class="piechart-progress" style="--progress:60">
+                            <div class="flex rounded-full piechart-progress" style="--progress:60">
                                 <div class="whitespace">
                                     <div class="progress-number">60%</div>
                                 </div>
@@ -61,9 +61,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="analysis-section">
-                    <div class="analysis-box">
-                        <div class="analysis-info">
+                <div class="flex flex-wrap justify-around items-center analysis-section">
+                    <div class="flex flex-col justify-evenly items-center analysis-box">
+                        <div class="flex flex-col justify-center items-center text-center analysis-info">
                             <div class="analysis-img">
                                 <img src="{{ asset('images/image 2.png') }}" alt="img">
                             </div>
@@ -71,8 +71,8 @@
                         </div>
                         <span class="analysis-score">70</span>
                     </div>
-                    <div class="analysis-box">
-                        <div class="analysis-info">
+                    <div class="flex flex-col justify-evenly items-center analysis-box">
+                        <div class="flex flex-col justify-center items-center text-center analysis-info">
                             <div class="analysis-img">
                                 <img src="{{ asset('images/image 1.png') }}" alt="img">
                             </div>
@@ -80,8 +80,8 @@
                         </div>
                         <span class="analysis-score"><span class="answer-success">30</span>/70</span>
                     </div>
-                    <div class="analysis-box">
-                        <div class="analysis-info">
+                    <div class="flex flex-col justify-evenly items-center analysis-box">
+                        <div class="flex flex-col justify-center items-center text-center analysis-info">
                             <div class="analysis-img">
                                 <img src="{{ asset('images/image 2.png') }}" alt="img">
                             </div>
@@ -89,8 +89,8 @@
                         </div>
                         <span class="analysis-score">70</span>
                     </div>
-                    <div class="analysis-box">
-                        <div class="analysis-info">
+                    <div class="flex flex-col justify-evenly items-center analysis-box">
+                        <div class="flex flex-col justify-center items-center text-center analysis-info">
                             <div class="analysis-img">
                                 <img src="{{ asset('images/image 1.png') }}" alt="img">
                             </div>
@@ -98,8 +98,8 @@
                         </div>
                         <span class="analysis-score"><span class="answer-success">30</span>/70</span>
                     </div>
-                    <div class="analysis-box">
-                        <div class="analysis-info">
+                    <div class="flex flex-col justify-evenly items-center analysis-box">
+                        <div class="flex flex-col justify-center items-center text-center analysis-info">
                             <div class="analysis-img">
                                 <img src="{{ asset('images/image 3.png') }}" alt="img">
                             </div>
@@ -110,29 +110,29 @@
                 </div>
             </main>
             <footer class="footer">
-                <div class="chart-container">
-                    <div class="chart-box">
+                <div class="flex chart-container">
+                    <div class="flex flex-col items-center w-half chart-box">
                         <div class="chart heading">
-                            <h1 class="chart-title">Recent Test Performance</h1>
+                            <h1 class="text-center chart-title">Recent Test Performance</h1>
                         </div>
                         <x-bar-chart :bars="['30', '15', '5', '60', '90']" />
                     </div>
-                    <div class="chart-box">
+                    <div class="flex flex-col items-center w-half chart-box">
                         <div class="chart heading">
-                            <h1 class="chart-title">Recent Exam Performance</h1>
+                            <h1 class="text-center chart-title">Recent Exam Performance</h1>
                         </div>
                         <x-bar-chart :bars="['30', '45', '35', '55', '50']" />
                     </div>
                 </div>
-                <div class="chart-container-info">
-                    <div class="subjects-topics">
-                        <div class="block-head">
-                            <ul>
+                <div class="w-full chart-container-info">
+                    <div class="flex justify-between subjects-topics">
+                        <div class="flex flex-col justify-end h-full block-head">
+                            <ul class="flex flex-col">
                                 <li>Topics</li>
                                 <li>Subjects</li>
                             </ul>
                         </div>
-                        <div class="block-info">
+                        <div class="flex h-inherit block-info">
                             <div class="block-card">
                                 <h4 style="background-color: var(--primarySuccessColor)">Excelling in</h4>
                                 <ul>

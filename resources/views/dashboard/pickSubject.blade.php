@@ -20,29 +20,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary">Continue -></a>
+                            <a href="#" class="btn btn-primary" id="send-subject">Continue -></a>
                 </div>
                 <div class="pick-subjects">
                     <div class="subjects-wrapper">
                         <div class="subject-box">
-                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 />
-                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 />
-                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 />
+                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 id=1/>
+                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 id=2/>
+                            <x-subject-card logo='image 4.png' title='Social Studies' topicAmount=14 id=3/>
                         </div>
                         <div class="subject-box">
-                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 />
-                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 />
-                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 />
+                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 id=4/>
+                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 id=5/>
+                            <x-subject-card logo='image 9.png' title='English Language' topicAmount=14 id=6/>
                         </div>
                         <div class="subject-box">
-                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 />
-                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 />
-                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 />
+                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 id=7/>
+                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 id=8/>
+                            <x-subject-card logo='image 5.png' title='Mathematics' topicAmount=14 id=9/>
                         </div>
                         <div class="subject-box">
-                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 />
-                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 />
-                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 />
+                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 id=10/>
+                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 id=11/>
+                            <x-subject-card logo='image 7.png' title='Mathematics' topicAmount=14 id=12/>
                         </div>
                     </div>
                 </div>
