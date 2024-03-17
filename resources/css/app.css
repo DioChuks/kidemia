@@ -1818,3 +1818,14 @@ main .content {
 }
 
 /* end of ongoing test */
+
+/* result */
+.small-box::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 40px;
+    top: 0;
+    background-color: var(--infoColor);
+}
+/* end of result */

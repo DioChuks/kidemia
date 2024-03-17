@@ -29,18 +29,21 @@
        <div class="flex flex-wrap justify-evenly items-start gap-10" id="subject-box">
         @for ($i = 1; $i <= 16; $i++)
          @if ($i <= 4)
-          <x-subject-card logo='image 4.png' class="subject-card-color-1" title='Social Studies' topicAmount=14 :id=$i />
+          <x-subject-card logo='image 4.png' class="subject-card-color-1" title='Social Studies' topicAmount=14
+           :id=$i />
          @elseif ($i <= 8)
-          <x-subject-card logo='image 9.png' class="subject-card-color-2" title='English Language' topicAmount=14 :id=$i />
+          <x-subject-card logo='image 9.png' class="subject-card-color-2" title='English Language' topicAmount=14
+           :id=$i />
          @elseif ($i <= 12)
           <x-subject-card logo='image 5.png' class="subject-card-color-3" title='Mathematics' topicAmount=14 :id=$i />
          @else
-          <x-subject-card logo='image 7.png' class="subject-card-color-4" title='Verbal Reasoning' topicAmount=14 :id=$i />
+          <x-subject-card logo='image 7.png' class="subject-card-color-4" title='Verbal Reasoning' topicAmount=14
+           :id=$i />
          @endif
         @endfor
        </div>
       </div>
-    </section>
+     </section>
     </div>
    </div>
   </div>

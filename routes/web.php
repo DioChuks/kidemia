@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,7 @@ Route::get('/pick-topic', function () {
 Route::post('/test/topics', [TestController::class, 'saveStudentTestTopics'])->name('test.topics');
 
 Route::get('/test/ongoing/{subject}', [TestController::class, 'test'])->name('test.ongoing');
+
+Route::get('/test/result', [ResultController::class, 'showTestResult'])->name('test.result');
 
 require __DIR__.'/auth.php';
