@@ -14,12 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
 const subjectIds = document.querySelectorAll(".subject-id");
 subjectIds.forEach((subject) => {
     subject.addEventListener("change", () => {
-        console.log(subject.value);
-        let card = document.getElementById("selected-" + subject.value);
-        console.log(card.classList.toggle("active"));
-        console.log(
-            (document.getElementById("send-subject").href = subject.value)
-        );
+        const selectedAttribute = "selected-" + subject.value;
+        const card = document.querySelector(
+            `.subject-card[for="${selectedAttribute}"]`
+        ); // Select card with matching attribute
+        let labels = document.querySelectorAll(".subject-card");
+        labels.forEach(label => {
+          if (label.getAttribute("for", selectedAttribute) == selectedAttribute) {
+            let subjectTitle = label.querySelector(".subject-title").innerText;
+            document.getElementById('subject-choice').innerText = subjectTitle;
+          }
+          label.classList.remove('active');
+        });
+        card.classList.toggle('active');
     });
 });
 
