@@ -8,8 +8,8 @@
             <p class="test-subtitle">{{ $subtitle }}</p>
         </div>
         <div class="flex test-btn">
-            <a href="/" class="btn btn-secondary">cancel</a>
-            <a href="{{ route('pick.subject') }}" class="btn btn-primary">continue</a>
+            <a href="/" class="btn btn-secondary sm-btn">cancel</a>
+            <a href="{{ route('pick.subject') }}" class="btn btn-primary sm-btn">continue</a>
         </div>
     </div>
 </div>
