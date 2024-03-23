@@ -32,6 +32,8 @@ subjectIds.forEach((subject) => {
           if (label.getAttribute("for", selectedAttribute) == selectedAttribute) {
             let subjectTitle = label.querySelector(".subject-title").innerText;
             document.getElementById('subject-choice').innerText = subjectTitle;
+            let subjectBtn = document.getElementById('send-subject');
+            subjectBtn.setAttribute('href', `/subjects/${subject.value}/pick-topic`);
           }
           label.classList.remove('active');
         });
@@ -58,8 +60,8 @@ const form = document.getElementById("topic-form");
 
 // Open the modal when the button is clicked
 if (openModalBtn) {
-    openModalBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+    openModalBtn.addEventListener("click", () => {
+        // e.preventDefault();
         let anyChecked = false;
         let checkBoxes = document.querySelectorAll(".topic-checkbox");
         checkBoxes.forEach((checkbox) => {
@@ -78,40 +80,40 @@ if (openModalBtn) {
             modal.classList.add("visible");
     
             // Gather form data
-            const formData = new FormData(form);
+            // const formData = new FormData(form);
     
-            // Get CSRF token from hidden field
-            const csrfToken = document.querySelector('input[name="_token"]').value;
-            formData.append("_token", csrfToken);
+            // // Get CSRF token from hidden field
+            // const csrfToken = document.querySelector('input[name="_token"]').value;
+            // formData.append("_token", csrfToken);
     
-            // Send data using Fetch API
-            fetch("/test/topics", {
-                method: "POST",
-                body: formData,
-            })
-                .then((response) => {
-                    if (response.ok) {
-                        // Handle successful response (e.g., show loading modal)
-                        console.log("Form data sent successfully!");
-                        console.log(response.text);
+            // // Send data using Fetch API
+            // fetch("/test/create/topics/questions", {
+            //     method: "POST",
+            //     body: formData,
+            // })
+            //     .then((response) => {
+            //         if (response.ok) {
+            //             // Handle successful response (e.g., show loading modal)
+            //             console.log("Form data sent successfully!");
+            //             console.log((response.text));
     
-                        // redirect to next screen
-                        setTimeout(() => {
-                            window.location.href = "/getting-ready";
-                        }, 1500);
-                        // Show loading modal (implementation depends on your modal logic)
-                    } else {
-                        console.error(
-                            "Error sending form data:",
-                            response.statusText
-                        );
-                        // Handle errors (e.g., display error message)
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error sending form data:", error);
-                    // Handle network or other errors
-                });
+            //             // server returns a redirect
+            //             // setTimeout(() => {
+            //             //     window.location = response.url;
+            //             // }, 2500);
+            //             // Show loading modal (implementation depends on your modal logic)
+            //         } else {
+            //             console.error(
+            //                 "Error sending form data:",
+            //                 response.statusText
+            //             );
+            //             // Handle errors (e.g., display error message)
+            //         }
+            //     })
+            //     .catch((error) => {
+            //         console.error("Error sending form data:", error);
+            //         // Handle network or other errors
+            //     });
         } else {
             const vMsg = document.getElementById("validationMsg");
             if (!vMsg) {

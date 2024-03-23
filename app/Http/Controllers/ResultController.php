@@ -10,4 +10,9 @@ class ResultController extends Controller
     {
         return view("result.show-result");
     }
+
+    public function showTestCorrection()
+    {
+        return view("correction.index");
+    }
 }

@@ -1051,6 +1051,34 @@ li {
     font-size: 40px;
 }
 
+.font-xs {
+    font-weight: 200;
+}
+
+.font-sm {
+    font-weight: 300;
+}
+
+.font-md {
+    font-weight: 400;
+}
+
+.font-lg {
+    font-weight: 500;
+}
+
+.font-lg {
+    font-weight: 600;
+}
+
+.font-xl {
+    font-weight: 700;
+}
+
+.font-2xl {
+    font-weight: 800;
+}
+
 .border {
     border: 1px solid;
 }
@@ -1958,6 +1986,46 @@ footer .dashboard-btn-box {
     gap: 10px;
     font-size: 16px;
     font-weight: 500;
+}
+
+.form-radio {
+    /* Reset the default radio */
+    display: block;
+    position: relative;
+}
+
+.form-radio::before {
+    /* Style the radio "box" */
+    content: "";
+    display: block;
+    width: 11px;
+    height: 11px;
+    background-color: var(--brandWhite); /* Adjust background color */
+    border: 1px solid #aaa; /* Adjust border style and color */
+    border-radius: 5px; /* Adjust border radius */
+}
+
+.form-radio:checked::after {
+    /* Style the radio */
+    content: "";
+    background-color: var(--primary-color);
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 11px; /* Adjust checkmark size */
+    font-weight: 600;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-label:hover {
+    background-color: var(--primary-color);
+    color: var(--primaryTextColor);
 }
 
 /* end of ongoing test */

@@ -5,7 +5,7 @@
  <div id="app" class="hidden">
   <div class="w-full h-auto flex flex-col main-wrapper picker-wrap bg-brand-white">
    <div class="w-full h-5 bg-secondary"></div>
-   <form action="{{ route('get.ready') }}" class="flex flex-col pick-container" method="" id="topic-form">
+   <form action="{{ route('get.ready') }}" class="flex flex-col pick-container" method="GET" id="topic-form">
     @csrf
     <div class="flex justify-between gap-10 p-20 pick-top-section">
      <a href="{{ route('pick.subject') }}" class="btn btn-primary sm-btn"><- Back</a>
@@ -20,23 +20,16 @@
        <button type="submit" id="open-load" class="btn btn-primary sm-btn">Continue -></button>
     </div>
     <div class="inline-flex flex-col w-full h-auto">
+      <input type="text" name="subject" value="{{$subject }}" hidden/>
      <div class="flex justify-evenly flex-wrap gap-10 m-10 sm-topics-gap">
       <div id="validationMsg" class="w-full text-center mt-4"></div>
-      @for ($i = 1; $i <= 30; $i++)
-       <div class="w-10 h-4 flex items-center p-10 gap-2 bg-primary-10 rounded-sm transition-all topic-box" id="topicBox">
+      @foreach ($topics as $i => $topic)
+       <div class="w-auto h-4 flex items-center p-10 gap-2 bg-primary-10 rounded-sm transition-all topic-box" id="topicBox">
         <input type="checkbox" class="cursor-pointer topic-checkbox" name="topic-{{ $i }}"
          id="form-label-{{ $i }}" aria-describedby="topic" value="{{ $i }}" />
-        @if ($i <= 4)
-         <label for="form-label-{{ $i }}" class="cursor-pointer">Equations</label>
-        @elseif ($i <= 8)
-         <label for="form-label-{{ $i }}" class="cursor-pointer">Growth
-          Metric</label>
-        @else
-         <label for="form-label-{{ $i }}" class="cursor-pointer">Water
-          Cycle</label>
-        @endif
+        <label for="form-label-{{ $i }}" class="cursor-pointer">{{$topic }}</label>
        </div>
-      @endfor
+      @endforeach
      </div>
     </div>
    </form>

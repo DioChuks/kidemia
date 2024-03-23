@@ -27,7 +27,7 @@
     </section>
    </div>
    <div class="w-half flex justify-between items-center gap-5">
-    <a href="#" class="btn btn-primary">View Corrections</a>
+    <a href="#" class="btn btn-primary sm-btn">View Corrections</a>
     <div class="flex items-center gap-10 text-dark">
      <a href="#" class="inline-flex items-center text-14"><x-home-icon /> Home</a>
      <a href="#" class="inline-flex items-center text-14"><x-activity-icon /> Dashboard</a>

@@ -21,7 +21,7 @@
          </div>
         </div>
        </div>
-       <a href="{{ route('pick.topic') }}" class="btn btn-primary" id="send-subject">Continue -></a>
+       <a href="#" class="btn btn-primary" id="send-subject">Continue -></a>
     </div>
     <div class="w-full inline-flex justify-center items-center pick-subjects">
      <section class="h-auto">
