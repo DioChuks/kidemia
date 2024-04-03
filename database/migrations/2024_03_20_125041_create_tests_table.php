@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('uuid');
             $table->unsignedBigInteger('subject_id');
-            $table->unsignedBigInteger('topic_id');
+            $table->longText('topics');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('test_type_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('status');
             $table->string('score');
             $table->string('time_taken');

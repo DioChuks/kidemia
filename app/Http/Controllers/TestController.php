@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class TestController extends Controller
 {
-    public function saveStudentTestTopics(Request $request)
+    public function startNewTest(Request $request)
     {
-        return 'test';
+      
+      // create a new test for the selected subject and its topic(s)
+      // $subject = $request->input('subject');
+      // $topics = $request->input('topics');
+      // $assessment_type = $request->input('assessment_type');
+      $test_uuid = Str::uuid();
+      // then return a json response
+      return response()->json(['test_id' => $test_uuid], 201);
     }
 
-    public function test(): View
+    public function test($test): View
     {
         $questions = [
             [
@@ -198,14 +206,17 @@ class TestController extends Controller
             ],
         ];
 
-        return view('ongoing-test', compact('questions'));
+        return view('ongoing-test', compact(['questions', 'test']));
     }
 
-    public function showReadyScreen(Request $request): View
+    public function showReadyScreen($id): View
     {
-        $subject = $request->query('subject');
-        // create a new test for the selected subject and its topic(s)
+      // $id = '39dw3-32932-3fcej-99df2';
+        
+        // waiting view for the test id
+        // sign the test id for the active status
+
         // then redirect to the ready screen with test uuid
-        return view('dashboard.readyScreen')->with(['subject' => $subject]);
+        return view('dashboard.readyScreen')->with(['id' => $id]);
     }
 }

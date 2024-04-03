@@ -5,7 +5,7 @@
  <div id="app" class="hidden">
   <div class="w-full h-auto flex flex-col main-wrapper picker-wrap bg-brand-white">
    <div class="w-full h-5 bg-secondary"></div>
-   <form action="{{ route('get.ready') }}" class="flex flex-col pick-container" method="GET" id="topic-form">
+   <form action="#" class="flex flex-col pick-container" method="POST" id="topic-form">
     @csrf
     <div class="flex justify-between gap-10 p-20 pick-top-section">
      <a href="{{ route('pick.subject') }}" class="btn btn-primary sm-btn"><- Back</a>

@@ -17,7 +17,7 @@
          <div class="flex justify-center items-center gap-5 h-4">
           <img src="{{ asset('images/image 3.png') }}" alt="clock" class="w-3 h-3">
           <p>Time limit: 20mins</p>
-          <small class="text-light-green" id="subject-choice"></small>
+          <small class="text-green" id="subject-choice"></small>
          </div>
         </div>
        </div>

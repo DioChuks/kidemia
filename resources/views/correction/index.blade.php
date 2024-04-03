@@ -9,14 +9,14 @@
      <img src="{{ asset('images/logo.png') }}" alt="alt-img" class="w-inherit h-inherit" />
     </div>
     <div class="flex justify-between items-center mx-2 timer-box">
-     <h3>Total Time Used: <span id="timeUsed">10mins: 54 Secs</span></h3>
+     <h4>Total Time Used: <span id="timeUsed">10mins: 54 Secs</span></h4>
      <input type="number" name="minutes_left" id="minLeft" required hidden />
      <input type="number" name="seconds_left" id="secsLeft" required hidden />
      <a class="btn btn-primary sm-btn" href="/">Dashboard</a>
     </div>
    </div>
-   <div class="w-full h-70 flex border">
-    <div class="w-half h-full flex flex-col gap-5 bg-brand-white border">
+   <div class="w-full h-70 flex gap-5">
+    <div class="w-half h-full flex flex-col gap-5 bg-brand-white">
      <div class="w-3-quarts mx-auto flex flex-col justify-center items-center">
       <div class="w-3-quarts flex flex-col justify-center gap-10">
        <h2 class="text-left">Question <span id="questionNumber"></span>:</h2>
@@ -35,7 +35,7 @@
          <button type="button" class="btn bg-light-green text-green border border-white sm-btn" id="nextBtn">Next ->
          </button>
       </div>
-      <div id="questionNumbers" class="w-full flex justify-center">
+      <div id="questionNumbers" class="w-full h-20 flex justify-center">
        <div class="w-3-quarts h-15 p-4 flex flex-wrap justify-evenly items-start gap-20">
         @for ($i = 1; $i <= 20; $i++)
          <div class="mx-3 qno">
@@ -49,7 +49,24 @@
       </div>
      </div>
     </div>
-    <div class="w-half h-full flex flex-col gap-5 border">right ox</div>
+    <div class="w-half h-full flex flex-col justify-evenly gap-5 p-10">
+      <h3 class="text-white">You Failed this question</h3>
+      <div class="w-90p h-30 flex flex-col gap-5 bg-brand-white rounded-sm">
+        <div class="w-full h-20 flex justify-center items-center">
+          <img src="{{asset('images/image 11.png') }}" class="w-20 h-80p" alt="img-alt" />
+        </div>
+        <p class="ml-3">The Medulla Oblongata is located in the brain</p>
+      </div>
+      {{-- box for displaying the video or youtube links of failed questions --}}
+      {{-- iframe youtube video here --}}
+      <div class="w-93p h-20 flex gap-5">
+        <iframe width="60%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" style="border-radius: 10px;" allowfullscreen></iframe>
+        <div class="flex flex-col items-start justify-end gap-5">
+          <p class="text-white font-xs">Watch the video to know more</p>
+          <img src="{{asset('images/image 12.png') }}" alt="direction-logo" class="w-5 h-5"/>
+        </div>
+      </div>
+    </div>
    </div>
   </div>
 

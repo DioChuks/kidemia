@@ -12,6 +12,7 @@ class TopicController extends Controller
      */
     public function index($subject)
     {
+        // finds the topics associated with the selected subject
         $topics = [
             "Number Systems",
             "Operations with Numbers",

@@ -28,7 +28,7 @@ Route::get('/loading', function () {
     return view('loading');
 });
 
-Route::get('/getting-ready', [TestController::class, 'showReadyScreen'])->name('get.ready');
+Route::get('/getting-ready/{id}', [TestController::class, 'showReadyScreen'])->name('get.ready');
 
 Route::get('/pick-subject', function () {
     return view('dashboard.pickSubject');
@@ -36,12 +36,15 @@ Route::get('/pick-subject', function () {
 
 Route::get('/subjects/{subject}/pick-topic', [TopicController::class, 'index'])->name('pick.topic');
 
-Route::post('/test/create/topics/questions', [TestController::class, 'saveStudentTestTopics'])->name('test.topics');
+Route::post('/test/create/questions', [TestController::class, 'startNewTest'])->name('test.topics');
 
 Route::get('/test/ongoing/{test}', [TestController::class, 'test'])->name('test.ongoing');
 
 Route::get('/test/result', [ResultController::class, 'showTestResult'])->name('test.result');
 
 Route::get('/test/result/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');
+
+// terminate test or exam status
+Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrEXamStatus'])->name('terminate.test-exam');
 
 require __DIR__.'/auth.php';
