@@ -1,5 +1,5 @@
-<div class="flex flex-col items-end w-full chart-info-box">
-    <select name="recent" id="most-recent">
+<div class="flex flex-col items-end w-full text-dark chart-info-box">
+    <select name="recent" id="{{$titleId }}">
         <option value="5">Last 5</option>
         <option value="next">upper 5</option>
     </select>

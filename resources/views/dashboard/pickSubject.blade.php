@@ -48,6 +48,7 @@
    </div>
   </div>
  </div>
+ @vite(['resources/js/subjects.js'])
 </body>
 
 </html>

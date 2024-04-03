@@ -13,6 +13,7 @@ class barChart extends Component
      */
     public function __construct(
         public array $bars,
+        public string $titleId,
     ) {
     }
 

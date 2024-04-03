@@ -36,6 +36,7 @@
    <x-loading />
   </div>
  </div>
+ @vite(['resources/js/topic-boxes.js'])
 </body>
 
 </html>

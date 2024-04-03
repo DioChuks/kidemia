@@ -577,6 +577,10 @@ li {
     animation: animatetop .5s ease-out;
 }
 
+.animate-scale-out {
+    animation: scaleOut 2s ease-out;
+}
+
 .whitespace-no {
     white-space: nowrap;
 }
@@ -764,6 +768,10 @@ li {
     padding: auto;
 }
 
+.p-val {
+    padding: var(--p);
+}
+
 .p-10 {
     padding: 10px;
 }
@@ -901,6 +909,10 @@ li {
     background-color: var(--light-green-color);
 }
 
+.bg-lightSuccess {
+    background-color: var(--lightSuccessColor);
+}
+
 .bg-transparent {
     background-color: transparent;
 }
@@ -950,6 +962,10 @@ li {
 
 .text-light-green {
     color: var(--light-green-color);
+}
+
+.text-lightSuccess {
+    color: var(--lightSuccessColor);
 }
 
 .text-1 {
@@ -1079,12 +1095,24 @@ li {
     font-weight: 800;
 }
 
+.border-none {
+    border: none;
+}
+
 .border {
     border: 1px solid;
 }
 
 .border-2 {
     border: 2px solid;
+}
+
+.border-collapse {
+    border-collapse: collapse;
+}
+
+.border-bottom {
+    border-bottom: 1px solid;
 }
 
 .border-light-grey {
@@ -1097,6 +1125,10 @@ li {
 
 .border-primary {
     border-color: var(--primary-color);
+}
+
+.border-primary-light {
+    border-color: var(--light10Primary-color);
 }
 
 .rounded-none {
@@ -1147,6 +1179,27 @@ li {
     object-fit: cover;
 }
 
+/* opacity */
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-d3{
+    opacity: 0.3;
+}
+
+.opacity-d5 {
+    opacity: 0.5;
+}
+
+.opacity-d7 {
+    opacity: 0.7;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
 :root {
     --primary-color: #f28729;
     --secondary-color: #2a3740;
@@ -1154,6 +1207,7 @@ li {
     --borderColor: #c3c3c3;
     --infoColor: #bf4c20;
     --primarySuccessColor: #16732d;
+    --lightSuccessColor: #7DFF50;
     /* --lightPrimaryColor: #f6b984fa; */
     --lightPrimaryColor: rgba(255, 255, 255, 0.5);
     --primaryBlueColor: #0147ff;
@@ -1162,6 +1216,7 @@ li {
     --light10Primary-color: #f287291a;
     --light-wine-color: rgba(200, 48, 66, 0.2);
     --light-green-color: rgba(22, 115, 45, 0.2);
+    --p: 0px;
 }
 
 .preloader {
@@ -1354,6 +1409,15 @@ header {
     animation: fadeIn 3s forwards;
 }
 
+@keyframes scaleOut {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1489,7 +1553,7 @@ footer {
     --line-color: currentcolor;
     --line-opacity: 0.25;
     --item-gap: 2%;
-    --item-default-color: #060606;
+    --item-default-color: #302e2e;
 
     height: 10rem;
     display: grid;
