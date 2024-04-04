@@ -52,6 +52,12 @@
    </div>
   </div>
  </div>
+ @isset($id)
+ <form action="" method="POST">
+  @csrf
+  <input type="hidden" name="_id" value="{{ $id}}" id="testId"/>'
+ </form>
+ @endisset
  @vite(['resources/js/window.js'])
 </body>
 

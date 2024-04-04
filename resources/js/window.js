@@ -1,5 +1,7 @@
 window.addEventListener("blur", () => {
-    const testId = your_id_variable;
+    const testId = document.getElementById('testId').value;
+    console.log(testId);
+    const csrfToken = document.querySelector('input[name="_token"]').value;
 
     // Check if ID is defined before sending request
     if (testId) {
@@ -7,12 +9,14 @@ window.addEventListener("blur", () => {
             method: "POST", // Use POST for termination requests
             headers: {
                 "Content-Type": "application/json", // Set content type for JSON data
+                'X-CSRF-Token': csrfToken
             },
             body: JSON.stringify({ id: testId }), // Send ID in request body
         })
             .then((response) => {
                 if (response.ok) {
                     console.log("Test exam terminated successfully!");
+                    alert('terminated');
                     // Handle successful termination (e.g., redirect to results page)
                 } else {
                     console.error(

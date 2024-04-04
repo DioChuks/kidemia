@@ -27,10 +27,10 @@ class ResultController extends Controller
                 'id' => 'required|string',
             ]);
             // find ongoing assessment for the user based on the request->id
-            return response('terminated');
+            return response()->json(['status' => 'ok', 'msg' => 'terminated'], 200);
         } catch (\Throwable $th) {
             //throw $th;
-            return response($th->getMessage(),500); 
+            return response()->json(['status' => 'bad', 'msg' => $th->getMessage()], 500); 
         }
     }
 }
