@@ -8,7 +8,7 @@
    <form action="#" class="flex flex-col pick-container" method="POST" id="topic-form">
     @csrf
     <div class="flex justify-between gap-10 p-20 pick-top-section">
-     <a href="{{ route('pick.subject') }}" class="btn btn-primary sm-btn"><- Back</a>
+     <a href="{{ route('pick.subject', $type) }}" class="btn btn-primary sm-btn"><- Back</a>
        <div class="flex flex-col items-center gap-5 pick-top-heading">
         <div class="w-6 h-6">
          <img src="{{ asset('images/logo2.png') }}" alt="img" class="w-inherit h-inherit" />

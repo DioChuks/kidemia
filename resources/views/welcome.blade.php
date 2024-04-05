@@ -42,7 +42,7 @@
      </div>
      <div class="w-full flex justify-center gap-10">
       <a href="{{ route('take.test') }}" class="btn btn-primary animate-scale-out sm-btn">Take a test</a>
-      <button class="btn btn-primary animate-scale-out sm-btn">Take an exam</button>
+      <a href="{{ route('take.exam') }}" class="btn btn-primary animate-scale-out sm-btn">Take an exam</a>
      </div>
     </div>
    </div>

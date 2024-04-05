@@ -11,7 +11,8 @@ subjectIds.forEach((subject) => {
             let subjectTitle = label.querySelector(".subject-title").innerText;
             document.getElementById('subject-choice').innerText = `You have picked ${subjectTitle}`;
             let subjectBtn = document.getElementById('send-subject');
-            subjectBtn.setAttribute('href', `/subjects/${subject.value}/pick-topic`);
+            let type = subjectBtn.getAttribute('dta-type');
+            subjectBtn.setAttribute('href', `/pick/${subject.value}/topic/${type}`);
           }
           label.classList.remove('active');
         });

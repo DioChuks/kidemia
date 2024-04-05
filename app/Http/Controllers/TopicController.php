@@ -10,7 +10,7 @@ class TopicController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($subject)
+    public function index($subject, $type)
     {
         // finds the topics associated with the selected subject
         $topics = [
@@ -45,7 +45,7 @@ class TopicController extends Controller
             "Statistics and Probability Distributions",
             "Linear Algebra and Applications",
         ];
-        return view('dashboard.pickTopic', compact('subject', 'topics'));
+        return view('dashboard.pickTopic', compact('subject', 'topics', 'type'));
     }
 
     /**

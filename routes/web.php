@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,21 +23,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/take-test', function () {
-    return view('taketest');
-})->name('take.test');
+Route::get('/take-test', [TestController::class, 'index'])->name('take.test');
+
+Route::get('/take-exam', [ExamController::class, 'index'])->name('take.exam');
 
 Route::get('/loading', function () {
     return view('loading');
 });
 
-Route::get('/getting-ready/{id}', [TestController::class, 'showReadyScreen'])->name('get.ready');
+// authentication routes
+Route::controller(AuthController::class)->group(function () {
+    Route::prefix('auth')->group(function () {
+        Route::get('/register', 'showRegister')->name('show.register');
+        Route::get('/login', 'showLogin')->name('show.login');
+        Route::post('/register', 'register')->name('register');
+        Route::post('/login', 'login')->name('login');
 
-Route::get('/pick-subject', function () {
-    return view('dashboard.pickSubject');
-})->name('pick.subject');
+    });
+});
 
-Route::get('/subjects/{subject}/pick-topic', [TopicController::class, 'index'])->name('pick.topic');
+Route::get('/getting/{id}/ready/{view?}', [TestController::class, 'showReadyScreen'])->where('view', '[A-Za-z]+')->name('get.ready');
+
+Route::get('/pick/{type}/subject', [SubjectController::class, 'index'])->name('pick.subject');
+
+Route::get('/pick/{subject}/topic/{type}', [TopicController::class, 'index'])->name('pick.topic');
 
 Route::post('/test/create/questions', [TestController::class, 'startNewTest'])->name('test.topics');
 

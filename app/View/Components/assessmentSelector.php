@@ -15,10 +15,8 @@ class assessmentSelector extends Component
         public string $title,
         public string $subtitle,
         public string $img,
-    )
-    {
-        //
-    }
+        public string $type,
+    ){}
 
     /**
      * Get the view / contents that represent the component.
