@@ -9,7 +9,8 @@ class AuthController extends Controller
 {
     public function showRegister()
     {
-        return view('auth.register');
+        $purposes = ['Common Entrance', 'Junior WAEC', 'Senior WAEC'];
+        return view('auth.register', compact('purposes'));
     }
     public function showLogin()
     {

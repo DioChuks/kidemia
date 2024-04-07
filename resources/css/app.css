@@ -945,6 +945,10 @@ li {
     background-color: var(--progressCircleColor);
 }
 
+.bg-light-blue {
+    background-color: var(--secondaryBlueColor);
+}
+
 .bg-transparent {
     background-color: transparent;
 }
@@ -1008,6 +1012,10 @@ li {
 
 .text-light-grey {
     color: var(--progressCircleColor);
+}
+
+.text-light-blue {
+    color: var(--secondaryBlueColor);
 }
 
 /* text hover */
@@ -1191,6 +1199,10 @@ li {
     border-color: var(--lightSuccessColor);
 }
 
+.border-light-blue {
+    border-color: var(--secondaryBlueColor);
+}
+
 .outline-none {
     outline: none;
 }
@@ -1301,6 +1313,7 @@ li {
     /* --lightPrimaryColor: #f6b984fa; */
     --lightPrimaryColor: rgba(255, 255, 255, 0.5);
     --primaryBlueColor: #0147ff;
+    --secondaryBlueColor: #3F4F79;
     --primaryWineColor: #c83042;
     --brandWhite: #f1e2c3;
     --light10Primary-color: #f287291a;
@@ -2276,11 +2289,64 @@ footer .dashboard-btn-box {
     border-color: var(--primaryTextColor);
 }
 
+/* radio input style */
+.purpose-box input[type="radio"] {
+    /* Hide the default checkbox */
+    display: block;
+    position: relative;
+}
+
+.purpose-box input[type="radio"]::before {
+    /* Style the radio "box" */
+    content: "";
+    display: block;
+    width: 11px;
+    height: 11px;
+    background-color: var(--brandWhite);
+    border: 1px solid #aaa; /* Adjust border style and color */
+    border-radius: 5px; /* Adjust border radius */
+}
+
+.purpose-box input[type="radio"]:checked::after {
+    content: "✓";
+    background-color: var(--brandWhite);
+    color: white;
+    width: 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 11px; /* Adjust checkmark size */
+    font-weight: 600;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* .purpose-box.purpose {
+    background-color: var(--infoColor);
+} */
+
+.purpose-box label {
+    font-size: 14px;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+.purpose-box .purpose-radio:checked + label {
+    color: var(--primaryTextColor);
+}
+/* end of radio input styles */
+
+/* school name input style */
+#schoolName {
+    outline: 0; 
+    border-width: 0 0 2px;
+    border-color: #000;
+}
+/* end of school name input style */
 /* end of auth styles */
-
-/* checkbox input style */
-
-/* end of checkbox input styles */
 
 
 /* responsive styles */

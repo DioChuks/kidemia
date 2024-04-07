@@ -29,7 +29,7 @@
             @endfor
           </div>
 
-          <div id="steps" class="w-half">
+          <div id="steps" class="w-3-quarts">
             <div id="step" class="flex flex-col gap-5">
               <div id="inputBox" class="flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
                 <label for="email"><x-mail-icon /></label>
@@ -50,11 +50,11 @@
               </div>
               <button id="nextStep"
                 class="w-full p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-pointer transition-all"
-                style="--textColor:#ccc;" type="button">Sign Up</button>
+                style="--textColor:#f7f7f7;" type="button">Sign Up</button>
               <h3 class="font-lg text-center">OR</h3>
               <a href="#" id="registerWithGoogle"
                 class="w-full flex justify-start items-center gap-10 p-10 bg-white bg-hover font-xs rounded-sm border-none cursor-pointer transition-all"
-                style="--bgHoverColor:#ccc;"><img src="{{ asset('images/google.png') }}" alt="google-logo"> Sign
+                style="--bgHoverColor:#f7f7f7;"><img src="{{ asset('images/google.png') }}" alt="google-logo"> Sign
                 up with
                 Google</a>
               <div id="loginLink" class="text-center"><span>I have an account <a href="{{ route('show.login') }}"
@@ -74,25 +74,87 @@
                     <h2>{{ $i === 0 ? 'Student' : 'School' }}</h2>
                   </label>
                   <input type="radio" name="user_type" id="user-{{ $i }}" class="hidden user-id"
-                    value="{{ $i }}" />
+                    value="{{ $i === 0 ? 'student' : 'school' }}" />
                 @endfor
               </div>
               <button id="biStep"
                 class="w-full p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
                 style="--textColor:#ccc;" type="button">continue</button>
             </div>
-            <div id="step" class="w-full hidden flex-col items-center gap-5">
+            {{-- start of student purpose step --}}
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
               <h2>What are you preparing for?</h2>
-              
-              <div class="w-full flex justify-between border">
-                <button id="prevStep"
-                class="w-full p-10 text-dark text-hover-color font-xs bg-transparent border-none cursor-pointer transition-all"
-                style="--textColor:#ccc;" type="button">< Back</button>
-                <button id="thirdStep"
-                class="w-full p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
-                style="--textColor:#ccc;" type="button">continue</button>
+              <div class="w-3-quarts flex justify-between items-center gap-5">
+                @foreach ($purposes as $i => $purpose)
+                <div class="w-auto h-4 flex items-center p-10 gap-2 rounded-sm transition-all purpose-box"
+                  id="purposeBox">
+                  <input type="radio" class="cursor-pointer purpose-radio" name="purpose"
+                    id="purpose-{{ $i }}" aria-describedby="purpose" value="{{ $purpose }}" />
+                  <label for="purpose-{{ $i }}" class="cursor-pointer">{{ $purpose }}</label>
+                </div>
+              @endforeach
+              </div>
+              <div class="w-full flex justify-between items-center">
+                <a id="studentBackToTypeStep"
+                  class="text-dark font-xs cursor-pointer">
+                  < Back
+              </a>
+                <button id="thirdStudentStep"
+                  class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
+                  style="--textColor:green;" type="button">
+                  continue
+                </button>
               </div>
             </div>
+            {{-- start of guardian step for student --}}
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
+              <h2>Let’s meet your guardian</h2>
+              <p class="text-center">Your guardian would receive reports on tests and exams you take</p>
+              <div class="w-3-quarts flex items-center gap-5">
+                <div id="inputBox" class="w-full flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
+                  <label for="email"><x-mail-icon /></label>
+                  <input type="email" name="guardian_email" id="guardianEmail" placeholder="Guardian email"
+                    class="w-full border-none outline-none bg-transparent font-xs text-16 text-dark" required />
+                </div>
+              </div>
+              <div class="w-full flex justify-between items-center">
+                <a id="prevStudentStep"
+                  class="text-dark font-xs cursor-pointer">
+                  < Back
+              </a>
+                <button id="FinalStudentStep"
+                  class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none transition-all"
+                  style="--textColor:green;" type="submit">
+                  continue
+                </button>
+              </div>
+            </div>
+            {{-- end of guardian step for student --}}
+            {{-- end of step for student signup --}}
+
+            {{-- start of school step selection --}}
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
+              <h2>Your school name</h2>
+              <div class="w-3-quarts flex justify-between items-center gap-5">
+                <div class="w-full h-4 flex items-center p-10 gap-2 rounded-sm transition-all schoolname-box"
+                  id="schoolNameBox">
+                  <input type="text" class="w-full bg-transparent font-lg" name="school_name"
+                    id="schoolName" aria-describedby="schoolName" />
+                </div>
+              </div>
+              <div class="w-full flex justify-between items-center">
+                <a id="schoolBackToTypeStep"
+                  class="text-dark font-xs cursor-pointer">
+                  < Back
+              </a>
+                <button id="thirdSchoolStep"
+                  class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
+                  style="--textColor:green;" type="button">
+                  continue
+                </button>
+              </div>
+            </div>
+            {{-- end of school step selection --}}
           </div>
         </form>
       </div>
