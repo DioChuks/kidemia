@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\Profile\UserController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TopicController;
@@ -38,6 +39,10 @@ Route::controller(AuthController::class)->group(function () {
         Route::get('/login', 'showLogin')->name('show.login');
         Route::post('/register', 'register')->name('register');
         Route::post('/login', 'login')->name('login');
+        Route::get('/forgot-password', 'showForgot')->name('show.forgot');
+        Route::post('/forgot-password', 'forgotPassword')->name('forgot.password');
+        Route::get('/change-password', 'showChangePassword')->name('show.change-password');
+        Route::post('/change-password', 'changePassword')->name('change.password');
 
     });
 });
@@ -58,5 +63,12 @@ Route::get('/test/result/corrections', [ResultController::class, 'showTestCorrec
 
 // terminate test or exam status
 Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrEXamStatus'])->name('terminate.test-exam');
+
+// user details
+Route::controller(UserController::class)->group(function () {
+    Route::prefix('account')->group(function () {
+        Route::get('/user/profile', 'showUserProfile')->name('show.user-profile');
+    });
+});
 
 require __DIR__.'/auth.php';

@@ -17,6 +17,7 @@
         </header>
         <form id="body" class="w-3-quarts flex flex-col justify-between items-center gap-5"
           action="{{ route('register') }}" method="POST">
+          @csrf
           <div id="pagination" class="flex items-center gap-5">
             @for ($i = 1; $i <= 4; $i++)
               <div
@@ -29,7 +30,7 @@
             @endfor
           </div>
 
-          <div id="steps" class="w-3-quarts">
+          <div id="steps" class="w-3-quarts sm-w-value" style="--rWidthValue:100%">
             <div id="step" class="flex flex-col gap-5">
               <div id="inputBox" class="flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
                 <label for="email"><x-mail-icon /></label>
@@ -114,7 +115,7 @@
                 <div id="inputBox" class="w-full flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
                   <label for="email"><x-mail-icon /></label>
                   <input type="email" name="guardian_email" id="guardianEmail" placeholder="Guardian email"
-                    class="w-full border-none outline-none bg-transparent font-xs text-16 text-dark" required />
+                    class="w-full border-none outline-none bg-transparent font-xs text-16 text-dark" />
                 </div>
               </div>
               <div class="w-full flex justify-between items-center">
@@ -150,6 +151,29 @@
                 <button id="thirdSchoolStep"
                   class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
                   style="--textColor:green;" type="button">
+                  continue
+                </button>
+              </div>
+            </div>
+            {{-- start of secondary admin --}}
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
+              <h2>Secondary Admin</h2>
+              <p class="text-center">This admin would receive report from the school </p>
+              <div class="w-3-quarts flex items-center gap-5">
+                <div id="inputBox" class="w-full flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
+                  <label for="email"><x-mail-icon /></label>
+                  <input type="email" name="guardian_email" id="guardianEmail" placeholder="Secondary email"
+                    class="w-full border-none outline-none bg-transparent font-xs text-16 text-dark" />
+                </div>
+              </div>
+              <div class="w-full flex justify-between items-center">
+                <a id="prevStudentStep"
+                  class="text-dark font-xs cursor-pointer">
+                  < Back
+              </a>
+                <button id="FinalStudentStep"
+                  class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none transition-all"
+                  style="--textColor:green;" type="submit">
                   continue
                 </button>
               </div>

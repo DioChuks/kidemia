@@ -925,6 +925,10 @@ li {
     background-color: var(--primaryWineColor);
 }
 
+.bg-red {
+    background-color: var(--red);
+}
+
 .bg-light-wine {
     background-color: var(--light-wine-color);
 }
@@ -996,6 +1000,10 @@ li {
 
 .text-wine {
     color: var(--primaryWineColor);
+}
+
+.text-red {
+    color: var(--red);
 }
 
 .text-light-wine {
@@ -1195,6 +1203,10 @@ li {
     border-color: var(--primaryWineColor);
 }
 
+.border-red {
+    border-color: var(--red);
+}
+
 .border-light-success {
     border-color: var(--lightSuccessColor);
 }
@@ -1315,6 +1327,7 @@ li {
     --primaryBlueColor: #0147ff;
     --secondaryBlueColor: #3F4F79;
     --primaryWineColor: #c83042;
+    --red: #FF0000;
     --brandWhite: #f1e2c3;
     --light10Primary-color: #f287291a;
     --light-wine-color: rgba(200, 48, 66, 0.2);
@@ -2378,6 +2391,9 @@ footer .dashboard-btn-box {
     .r-img {
         width: 50px;
         height: 50px;
+    }
+    .sm-w-value {
+        width: var(--rWidthValue);
     }
 }
 

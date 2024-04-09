@@ -14,7 +14,17 @@ class AuthController extends Controller
     }
     public function showLogin()
     {
-        return 'login here';
+        return view('auth.login');
+    }
+
+    public function showForgot()
+    {
+        return view('auth.forgot-password');
+    }
+
+    public function showChangePassword()
+    {
+        return view('auth.change-password');
     }
 
     public function register(Request $request)
