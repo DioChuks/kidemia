@@ -21,6 +21,7 @@
     </div>
     <div class="inline-flex flex-col w-full h-auto">
       <input type="text" name="subject" value="{{$subject }}" hidden/>
+      <input type="text" name="view" value="{{$type }}" hidden/>
      <div class="flex justify-evenly flex-wrap gap-10 m-10 sm-topics-gap">
       <div id="validationMsg" class="w-full text-center mt-4"></div>
       @foreach ($topics as $i => $topic)

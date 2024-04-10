@@ -25,7 +25,7 @@
                 id="number">
                 {{ $i }}</div>
               @if ($i !== 4)
-                <span class="font-lg text-light-grey text-center" id="bar">- - - -</span>
+                <span class="font-lg text-light-grey text-center sm-w-value" id="bar" style="--rWidthValue:100%;">- - - -</span>
               @endif
             @endfor
           </div>
@@ -162,7 +162,7 @@
               <div class="w-3-quarts flex items-center gap-5">
                 <div id="inputBox" class="w-full flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
                   <label for="email"><x-mail-icon /></label>
-                  <input type="email" name="guardian_email" id="guardianEmail" placeholder="Secondary email"
+                  <input type="email" name="second_admin_email" id="secondaryAdminEmail" placeholder="Secondary email"
                     class="w-full border-none outline-none bg-transparent font-xs text-16 text-dark" />
                 </div>
               </div>
@@ -171,7 +171,7 @@
                   class="text-dark font-xs cursor-pointer">
                   < Back
               </a>
-                <button id="FinalStudentStep"
+                <button id="FinalSchoolStep"
                   class="w-half p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none transition-all"
                   style="--textColor:green;" type="submit">
                   continue

@@ -5,7 +5,7 @@
  <div id="app" class="hidden">
   <div class="ready-wrapper">
    <div class="abs-btn-box">
-    <a href="{{ route('pick.topic', $id) }}" class="btn btn-primary"><- Back</a>
+    <a href="{{ route('pick.topic', [$id, $type]) }}" class="btn btn-primary"><- Back</a>
    </div>
    <div class="ready-info">
     <div class="ready-info-box">

@@ -17,6 +17,7 @@ window.addEventListener("blur", () => {
                 if (response.ok) {
                     console.log("Test exam terminated successfully!");
                     alert('terminated');
+                    window.location = "/account/user/profile";
                     // Handle successful termination (e.g., redirect to results page)
                 } else {
                     console.error(

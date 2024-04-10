@@ -38,6 +38,8 @@ class AuthController extends Controller
             'gender' => 'required|string',
             'guardian_email' => 'required|email',
         ]);
+
+        return redirect()->route('show.user-profile');
     }
 
     public function login(Request $request)

@@ -6,7 +6,9 @@
     <div class="h-max-screen">
       <header class="h-10p flex justify-between items-center bg-secondary mb-4 header">
         <div class="logo">
-          <img src="{{ asset('images/KIDEMIA LOGO pro 2.png') }}" alt="Kidemia" class="w-inherit h-inherit" />
+          <a href="/" class="w-inherit h-inherit">
+            <img src="{{ asset('images/KIDEMIA LOGO pro 2.png') }}" alt="Kidemia" class="w-inherit h-inherit" />
+          </a>
         </div>
         {{-- medium to large screen --}}
         <nav class="flex items-center nav sm-d-none">
@@ -31,87 +33,159 @@
         <x-menu-icon />
       </header>
       <div class="flex items-center justify-center">
-        <div class="Frame2608385" style="width: 860px; height: 915px; padding-top: 81px; padding-bottom: 80px; padding-left: 45px; padding-right: 44px; background: white; border-radius: 20px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-            <div class="Frame2608394" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: center; gap: 37px; display: inline-flex">
-              <div class="Frame2608387" style="flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: flex">
-                <img class="Ellipse1" style="width: 150px; height: 150px; border-radius: 9999px; border: 3px #F28729 solid" src="{{asset('images/Ellipse 1.svg') }}" />
-                <div class="Frame2608386" style="justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
-                  <x-cloud-upload-icon />
-                  <div class="TapToUploadYourPicture"><span style="color: black; font-size: 14px; font-family: Century Gothic; font-weight: 400; line-height: 19.60px; word-wrap: break-word">Tap to </span><span style="color: #F28729; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">upload</span><span style="color: black; font-size: 14px; font-family: Century Gothic; font-weight: 400; line-height: 19.60px; word-wrap: break-word"> your picture</span></div>
+        <div
+          class="w-80 h-full inline-flex flex-col items-center justify-center pr-5 pl-5 pt-5 pb-5 rounded-lg bg-white overflow-hidden Frame2608385">
+          <div class="w-full inline-flex flex-col justify-start items-center gap-10 self-stretch Frame2608394">
+            <div class="flex flex-col justify-center items-center gap-5 Frame2608387">
+              <img class="w-10 h-10 rounded-full border-3 border-primary Ellipse1"
+                src="{{ asset('images/Ellipse 1.svg') }}" />
+              <div class="inline-flex justify-start items-start gap-10 Frame2608386">
+                <x-cloud-upload-icon />
+                <div class="text-dark text-14 font-md font-gothic TapToUploadYourPicture"><span
+                    style="line-height: 19.60px; word-wrap: break-word">Tap to </span><span
+                    class="text-primary font-md text-16 font-gothic"
+                    style="line-height: 22.40px; word-wrap: break-word">upload</span><span
+                    class="text-dark text-14 font-md font-gothic" style="line-height: 19.60px; word-wrap: break-word">
+                    your picture</span></div>
+              </div>
+            </div>
+            <div class="w-full flex flex-col justify-center items-start Frame2608390">
+              <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame165">
+                <div class="inline-flex justify-start items-start gap-5 Frame166"
+                  style="padding-left: 12px; padding-right: 12px; opacity: 0.70;">
+                  <div class="text-16 text-gray font-gothic font-xl YourName"
+                    style="line-height: 25.20px; word-wrap: break-word">Your Name</div>
+                </div>
+                <div class="w-full inline-flex justify-start items-start gap-2 Frame2608389">
+                  <div
+                    class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
+                    style="width: 600px; height: 43px;">
+                    <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
+                      style="line-height: 22.40px; word-wrap: break-word" value="Student" />
+                  </div>
+                  <button
+                    class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
+                    <span class="text-white text-16 font-gothic font-md Update"
+                      style="line-height: 19.80px; word-wrap: break-word">Update</span>
+                  </button>
                 </div>
               </div>
-              <div class="Frame2608390" style="flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
-                <div class="Frame165" style="padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
-                  <div class="Frame166" style="padding-left: 12px; padding-right: 12px; opacity: 0.70; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                    <div class="YourName" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 700; line-height: 25.20px; word-wrap: break-word">Your Name</div>
+              <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame2608388">
+                <div class="inline-flex justify-start items-start gap-5 Frame166"
+                  style="padding-left: 12px; padding-right: 12px; opacity: 0.70;">
+                  <div class="text-16 text-gray font-gothic font-xl YourEmail"
+                    style="line-height: 25.20px; word-wrap: break-word">Your email</div>
+                </div>
+                <div class="w-full inline-flex justify-start items-start gap-2 Frame2608389">
+                  <div
+                    class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
+                    style="width: 600px; height: 43px;">
+                    <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
+                      style="line-height: 22.40px; word-wrap: break-word" value="echempraise@gmail.com" />
                   </div>
-                  <div class="Frame2608389" style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-                    <div class="Frame164" style="width: 600px; height: 43px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; overflow: hidden; border-bottom: 1px #F28729 solid; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                      <div class="Student" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Student</div>
-                    </div>
-                    <div class="Frame3" style="padding-top: 9px; padding-bottom: 11px; padding-left: 45px; padding-right: 45px; background: #F28729; border-radius: 5px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-                      <div class="Update" style="color: white; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 19.80px; word-wrap: break-word">Update</div>
-                    </div>
+                  <button
+                    class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
+                    <span class="text-white text-16 font-gothic font-md Update"
+                      style="line-height: 19.80px; word-wrap: break-word">Update</span>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame2608388">
+                <div class="inline-flex justify-start items-start gap-5 Frame166"
+                  style="padding-left: 12px; padding-right: 12px; opacity: 0.70;">
+                  <div class="text-16 text-gray font-gothic font-xl YourCategory"
+                    style="line-height: 25.20px; word-wrap: break-word">Your category</div>
+                </div>
+                <div class="w-full inline-flex justify-start items-start gap-2 Frame2608389">
+                  <div
+                    class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
+                    style="width: 600px; height: 43px;">
+                    <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
+                      style="line-height: 22.40px; word-wrap: break-word" value="Common Entrance" />
+                    <button
+                      class="w-auto h-full flex justify-center items-center bg-transparent border-none cursor-pointer Frame3" 
+                      id="openBtn">
+                      <span class="text-red text-16 font-gothic font-md Change"
+                        style="line-height: 19.80px; word-wrap: break-word">change</span>
+                    </button>
                   </div>
                 </div>
-                <div class="Frame2608388" style="padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
-                  <div class="Frame166" style="padding-left: 12px; padding-right: 12px; opacity: 0.70; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                    <div class="YourEmail" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 700; line-height: 25.20px; word-wrap: break-word">Your email</div>
+              </div>
+              <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame2608388">
+                <div class="inline-flex justify-start items-start gap-5 Frame166"
+                  style="padding-left: 12px; padding-right: 12px; opacity: 0.70;">
+                  <div class="text-16 text-gray font-gothic font-xl GuardianEmail"
+                    style="line-height: 25.20px; word-wrap: break-word">Guardian Email</div>
+                </div>
+                <div class="w-full inline-flex justify-start items-start gap-2 Frame2608389">
+                  <div
+                    class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
+                    style="width: 600px; height: 43px;">
+                    <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
+                      style="line-height: 22.40px; word-wrap: break-word" value="diochuks65@gmail.com" />
                   </div>
-                  <div class="Frame2608389" style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-                    <div class="Frame164" style="width: 600px; height: 43px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; overflow: hidden; border-bottom: 1px #F28729 solid; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                      <div class="EchempraiseGmailCom" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">echempraise@gmail.com</div>
-                    </div>
-                    <div class="Frame3" style="padding-top: 9px; padding-bottom: 11px; padding-left: 45px; padding-right: 45px; background: #F28729; border-radius: 5px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-                      <div class="Update" style="color: white; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 19.80px; word-wrap: break-word">Update</div>
-                    </div>
+                  <button
+                    class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
+                    <span class="text-white text-16 font-gothic font-md Update"
+                      style="line-height: 19.80px; word-wrap: break-word">Update</span>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame2608388">
+                <div class="inline-flex justify-start items-start gap-5 Frame166"
+                  style="padding-left: 12px; padding-right: 12px; opacity: 0.70;">
+                  <div class="text-16 text-gray font-gothic font-xl School"
+                    style="line-height: 25.20px; word-wrap: break-word">School</div>
+                </div>
+                <div class="w-full inline-flex justify-start items-start gap-2 Frame2608389">
+                  <div
+                    class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
+                    style="width: 600px; height: 43px;">
+                    <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
+                      style="line-height: 22.40px; word-wrap: break-word" value="null" />
                   </div>
                 </div>
-                <div class="Frame2608389" style="padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
-                  <div class="Frame166" style="padding-left: 12px; padding-right: 12px; opacity: 0.70; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                    <div class="YourCategory" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 700; line-height: 25.20px; word-wrap: break-word">Your category</div>
-                  </div>
-                  <div class="Frame2608389" style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-                    <div class="Frame164" style="width: 600px; height: 43px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; overflow: hidden; border-bottom: 1px #F28729 solid; justify-content: space-between; align-items: center; display: flex">
-                      <div class="CommonEntrance" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Common Entrance</div>
-                      <div class="Change" style="width: 62px; height: 23px; justify-content: center; align-items: center; display: flex">
-                        <div class="Change" style="color: #FF0000; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">change</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="Frame2608390" style="padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
-                  <div class="Frame166" style="padding-left: 12px; padding-right: 12px; opacity: 0.70; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                    <div class="GuardianEmail" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 700; line-height: 25.20px; word-wrap: break-word">Guardian Email</div>
-                  </div>
-                  <div class="Frame2608390" style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-                    <div class="Frame164" style="width: 600px; height: 43px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; overflow: hidden; border-bottom: 1px #F28729 solid; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                      <div class="EchempraiseGmailCom" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">echempraise@gmail.com</div>
-                    </div>
-                    <div class="Frame3" style="padding-top: 9px; padding-bottom: 11px; padding-left: 45px; padding-right: 45px; background: #F28729; border-radius: 5px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-                      <div class="Update" style="color: white; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 19.80px; word-wrap: break-word">Update</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="Frame2608392" style="padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
-                  <div class="Frame166" style="padding-left: 12px; padding-right: 12px; opacity: 0.70; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                    <div class="School" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 700; line-height: 25.20px; word-wrap: break-word">School</div>
-                  </div>
-                  <div class="Frame2608389" style="justify-content: flex-start; align-items: center; gap: 5px; display: inline-flex">
-                    <div class="Frame164" style="width: 600px; height: 43px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; overflow: hidden; border-bottom: 1px #F28729 solid; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                      <div class="Null" style="color: #3A3A3A; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Null</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="Frame2608391" style="padding-left: 8px; padding-right: 8px; padding-top: 20px; padding-bottom: 20px; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
-                  <div class="ChangePassword" style="color: black; font-size: 16px; font-family: Century Gothic; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Change Password</div>
-                </div>
+              </div>
+              <div class="w-full inline-flex justify-start items-start pl-2 pr-2 pt-2 pb-2">
+                <button class="text-16 font-lg border-none bg-transparent cursor-pointer text-hover-color"
+                  style="--textColor:orangered;">Change Password</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {{-- change category modal --}}
+      <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal" id="customModal">
+        <span class="close">&times;</span>
+        <form class="w-80p h-half flex flex-col items-center justify-evenly gap-5 bg-white p-10 rounded-md modal-content" method="post" action="">
+          @csrf
+          <h3 class="text-16 font-md WhatCategoryDoYouWantToChangeTo"
+            style="line-height: 22.40px; word-wrap: break-word">
+            What category do you want to change to</h3>
+          <div class="flex justify-start items-start gap-10 Frame2608373">
+            <div class="flex items-center gap-5">
+              <input type="radio" name="category" id="category1" value="Common Entrance" />
+              <label for="category1" class="cursor-pointer">Common Entrance</label>
+            </div>
+            <div class="flex items-center gap-5">
+              <input type="radio" name="category" id="category2" value="Junior WAEC" />
+              <label for="category2" class="cursor-pointer">Junior WAEC</label>
+            </div>
+            <div class="flex items-center gap-5">
+              <input type="radio" name="category" id="category3" value="Senior WAEC" />
+              <label for="category3" class="cursor-pointer">Senior WAEC</label>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-between gap-5">
+            <p class="text-16 font-md">Your guardian would need to approve your change, then you will be notified of their choice</p>
+            <button class="w-half p-10 border-none outline-none rounded-sm bg-primary text-white cursor-pointer" type="submit">Change</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+
+  @vite(['resources/js/modal.js'])
 </body>
 
 </html>

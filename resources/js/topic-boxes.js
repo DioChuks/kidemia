@@ -62,10 +62,12 @@ if (openModalBtn) {
               .then((data) => {  // data will be the parsed JSON object from the previous then block
                 // Access the returned data using the object properties
                 const testId = data.test_id;
+                const subjectId = data.subject_id;
+                const type = data.view;
                 console.log("Received test ID:", testId);
                 // Use the testId for further processing (e.g., redirect)
                 setTimeout(() => {
-                  window.location = `/getting-ready/${testId}`;
+                  window.location = `/getting/${subjectId}/ready/${type}/for/${testId}`;
                 }, 2500);
               })
               .catch((error) => {

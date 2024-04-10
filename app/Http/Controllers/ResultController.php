@@ -19,7 +19,7 @@ class ResultController extends Controller
     /**
      * Terminates ongoing test or exam status
      */
-    public function toggleTestOrEXamStatus(Request $request)
+    public function toggleTestOrExamStatus(Request $request)
     {
         // validate the request
         try {

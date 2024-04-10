@@ -1,13 +1,13 @@
-@font-face {
+/* @font-face {
     font-family: Century-Gothic;
     src: url("../../public/fonts/century-gothic/SansSerifFLF-Demibold.otf");
-}
+} */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Century-Gothic;
+    font-family: 'Century Gothic';
 }
 
 a,
@@ -66,6 +66,10 @@ li {
 
 .items-initial {
     align-items: initial;
+}
+
+.self-stretch {
+    align-self: stretch;
 }
 
 .justify-between {
@@ -601,6 +605,10 @@ li {
     overflow: hidden;
 }
 
+.overflow-auto {
+    overflow: auto;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -953,6 +961,10 @@ li {
     background-color: var(--secondaryBlueColor);
 }
 
+.bg-semi-black {
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
 .bg-transparent {
     background-color: transparent;
 }
@@ -980,6 +992,10 @@ li {
 
 .text-dark {
     color: var(--secondary-color);
+}
+
+.text-gray {
+    color: var(--gray-color);
 }
 
 .text-white {
@@ -1163,6 +1179,10 @@ li {
     font-weight: 800;
 }
 
+.font-gothic {
+    font-family: "Century Gothic";
+}
+
 .border-none {
     border: none;
 }
@@ -1173,6 +1193,10 @@ li {
 
 .border-2 {
     border: 2px solid;
+}
+
+.border-3 {
+    border: 3px solid;
 }
 
 .border-collapse {
@@ -1317,6 +1341,7 @@ li {
 :root {
     --primary-color: #f28729;
     --secondary-color: #2a3740;
+    --gray-color: #3A3A3A;
     --primaryTextColor: #ffffff;
     --borderColor: #c3c3c3;
     --infoColor: #bf4c20;
@@ -2361,6 +2386,21 @@ footer .dashboard-btn-box {
 /* end of school name input style */
 /* end of auth styles */
 
+.close {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* responsive styles */
 /* menu hamburger icon */

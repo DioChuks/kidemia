@@ -19,12 +19,17 @@ class TestController extends Controller
   {
 
     // create a new test for the selected subject and its topic(s)
-    // $subject = $request->input('subject');
+    $subject = $request->input('subject');
+    $view = $request->input('view');
     // $topics = $request->input('topics');
     // $assessment_type = $request->input('assessment_type');
     $test_uuid = Str::uuid();
     // then return a json response
-    return response()->json(['test_id' => $test_uuid], 201);
+    return response()->json([
+      'test_id' => $test_uuid,
+      'subject_id' => $subject,
+      'view' => $view
+    ], 201);
   }
 
   public function test($test): View
@@ -215,16 +220,20 @@ class TestController extends Controller
     return view('ongoing-test', compact(['questions', 'test']));
   }
 
-  public function showReadyScreen($id, $view = 'test'): View
+  public function showReadyScreen($id, string $view = 'test', string $readyId): View
   {
     // condition the view type, if test or exam
-    $view === 'test' ? $view = 'testReadyScreen' : $view = 'examReadyScreen';
+    if($view === 'test'){
+      $viewPage = 'testReadyScreen';
+    }else{
+      $viewPage = 'examReadyScreen';
+    }
     // $id = '39dw3-32932-3fcej-99df2';
 
     // waiting view for the test id
     // sign the test id for the active status
 
     // then redirect to the ready screen with test uuid
-    return view($view)->with(['id' => $id]);
+    return view("dashboard.$viewPage", ['id' => $id, 'type' => $view, 'readyId' => $readyId]);
   }
 }
