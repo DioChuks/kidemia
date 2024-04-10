@@ -57,7 +57,7 @@
                 </div>
                 <div class="w-full flex justify-between items-center gap-5 flex-wrap">
                     @foreach ($data as $d)
-                        <div class="w-20p h-15 flex justify-evenly border bg-grey-gradient rounded-sm info-card">
+                        <div class="w-20p h-15 flex justify-evenly bg-grey-gradient rounded-sm info-card">
                             <div class="flex items-center gap-5">
                                 <span>icon</span>
                                 <div class="flex flex-col items-center gap-5">
