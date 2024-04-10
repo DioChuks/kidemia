@@ -329,6 +329,10 @@ li {
     width: 80%;
 }
 
+.w-85p {
+    width: 85%;
+}
+
 .w-90p {
     width: 90%;
 }
@@ -965,6 +969,10 @@ li {
     background-color: rgba(0, 0, 0, 0.4)
 }
 
+.bg-grey-gradient {
+    background: var(--greyGradientColor);
+}
+
 .bg-transparent {
     background-color: transparent;
 }
@@ -1352,6 +1360,7 @@ li {
     --primaryBlueColor: #0147ff;
     --secondaryBlueColor: #3F4F79;
     --primaryWineColor: #c83042;
+    --greyGradientColor: linear-gradient(0deg, rgba(72, 71, 224, 0.05) 0%, rgba(72, 71, 224, 0.05) 100%), #fff;    
     --red: #FF0000;
     --brandWhite: #f1e2c3;
     --light10Primary-color: #f287291a;
@@ -2401,6 +2410,11 @@ footer .dashboard-btn-box {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* admin styles */
+
+
+/* end of admin styles */
 
 /* responsive styles */
 /* menu hamburger icon */

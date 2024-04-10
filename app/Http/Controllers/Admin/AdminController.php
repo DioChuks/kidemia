@@ -10,6 +10,17 @@ class AdminController extends Controller
 {
     public function index(): View
     {
-        return view('admin.index');
+        $noOfStudents = 1200;
+        $noOfSubjects = 500;
+        $noOfTopics = 1300;
+        $noOfTests = 1000;
+
+        $data = [
+            'studentsAmount' => $noOfStudents,
+            'subjectsAmount' => $noOfSubjects,
+            'topicsAmount' => $noOfTopics,
+            'testsAmount' => $noOfTests
+        ];
+        return view('admin.index', compact('data'));
     }
 }
