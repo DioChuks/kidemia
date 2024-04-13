@@ -13,7 +13,7 @@
      <ul class="flex items-center">
       <li class="nav-item"><a href="#">Pricing</a></li>
       <li class="nav-item"><a href="#">Scheme</a></li>
-      <li class="nav-item"><a href="#">Dashboard</a></li>
+      <li class="nav-item"><a href="{{ route('show.user-dashboard') }}">Dashboard</a></li>
       <li class="nav-item"><a href="#"><x-bell-icon /></a></li>
       <ul>
        <li class="nav-item"><a href="{{ route('show.user-profile') }}"><img src="{{ asset('images/Ellipse 1.svg') }}" alt="User-icon" /></a></li>

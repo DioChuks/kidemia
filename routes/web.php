@@ -69,6 +69,7 @@ Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamS
 // Route::middleware('auth')->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::prefix('account')->group(function () {
+            Route::get('/user/dashboard', 'showUserDashboard')->name('show.user-dashboard');
             Route::get('/user/profile', 'showUserProfile')->name('show.user-profile');
         });
     });

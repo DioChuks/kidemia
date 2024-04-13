@@ -5,7 +5,7 @@ var modal = document.getElementById("customModal");
 var btn = document.getElementById("openBtn");
 
 // get the button that closes the modal
-var close = document.querySelector(".close");
+var close = document.getElementById("closeModal");
 
 // add eventListeners
 btn.addEventListener("click", () => {

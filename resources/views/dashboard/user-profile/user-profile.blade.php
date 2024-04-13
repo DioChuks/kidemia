@@ -61,7 +61,7 @@
                     class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
                     style="width: 600px; height: 43px;">
                     <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
-                      style="line-height: 22.40px; word-wrap: break-word" value="Student" />
+                      style="line-height: 22.40px; word-wrap: break-word" value="" placeholder="Student" />
                   </div>
                   <button
                     class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
@@ -81,7 +81,7 @@
                     class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
                     style="width: 600px; height: 43px;">
                     <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
-                      style="line-height: 22.40px; word-wrap: break-word" value="echempraise@gmail.com" />
+                      style="line-height: 22.40px; word-wrap: break-word" value="" placeholder="echempraise@gmail.com" />
                   </div>
                   <button
                     class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
@@ -101,7 +101,7 @@
                     class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
                     style="width: 600px; height: 43px;">
                     <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
-                      style="line-height: 22.40px; word-wrap: break-word" value="Common Entrance" />
+                      style="line-height: 22.40px; word-wrap: break-word" value="" placeholder="Common Entrance" />
                     <button
                       class="w-auto h-full flex justify-center items-center bg-transparent border-none cursor-pointer Frame3" 
                       id="openBtn">
@@ -122,7 +122,7 @@
                     class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
                     style="width: 600px; height: 43px;">
                     <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
-                      style="line-height: 22.40px; word-wrap: break-word" value="diochuks65@gmail.com" />
+                      style="line-height: 22.40px; word-wrap: break-word" value="" placeholder="diochuks65@gmail.com" />
                   </div>
                   <button
                     class="w-quarter flex justify-center items-center p-10 bg-primary rounded-xs border-none cursor-pointer Frame3">
@@ -142,7 +142,7 @@
                     class="w-3-quarts flex justify-start items-center gap-5 rounded-sm pt-2 pb-2 pl-3 pr-3 overflow-hidden border-bottom border-primary Frame164"
                     style="width: 600px; height: 43px;">
                     <input class="w-full text-gray text-16 font-gothic font-xs Student border-none outline-none"
-                      style="line-height: 22.40px; word-wrap: break-word" value="null" />
+                      style="line-height: 22.40px; word-wrap: break-word" value="" placeholder="null" />
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@
       </div>
       {{-- change category modal --}}
       <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal" id="customModal">
-        <span class="close">&times;</span>
+        <span class="close" id="closeModal">&times;</span>
         <form class="w-80p h-half flex flex-col items-center justify-evenly gap-5 bg-white p-10 rounded-md modal-content" method="post" action="">
           @csrf
           <h3 class="text-16 font-md WhatCategoryDoYouWantToChangeTo"
