@@ -73,8 +73,8 @@
         </div>
         <div class="w-70p h-full bg-gray p-10 top-left-radius sm-w-value h-md-sm" style="--rWidthValue:100%;--rH:auto">
             <h2 class="text-dark mb-2">Subject Performance</h2>
-            <div class="w-full h-35 flex items-center gap-10 p-10 bg-semi-transparent border-2 border-white rounded-md">
-                <div class="w-quarter h-90p flex items-center">
+            <div class="w-full h-35 flex items-center gap-10 p-10 bg-semi-transparent border-2 border-white rounded-md sm-flex-col h-md-sm" style="--rH:auto">
+                <div class="w-quarter h-90p flex items-center sm-w-value" style="--rWidthValue:100%">
                     <div class="w-full h-80p flex flex-col items-center gap-5">
                       <x-pie-percent class="w-10 h-10 p-5 bg-conic-purple" progress="45" textSize="text-18" whitespace-bg='bg-semi-transparent' bg-type='bg-purple'/>
                       <div class="flex items-center gap-5">
@@ -89,7 +89,7 @@
                       </div>
                     </div>
                 </div>
-                <div class="w-3-quarts h-90p flex flex-col justify-evenly gap-10 flex-wrap">
+                <div class="w-3-quarts h-90p flex flex-col sm-flex-row justify-evenly sm-justify-content gap-10 flex-wrap sm-w-value" style="--pos:flex-start;--rWidthValue:100%">
                     @for ($i=1; $i < 16; $i++)
                       <div class="flex items-center gap-5" id="topicPerformanceBox{{ $i }}">
                         <x-number-box value='{{$i }}' class="w-3 h-3 bg-light-blue text-white"/>

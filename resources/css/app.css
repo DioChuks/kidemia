@@ -2578,6 +2578,15 @@ footer .dashboard-btn-box {
         flex-direction: column;
     }
 
+    .sm-flex-row {
+        flex-direction: row;
+    }
+
+    .sm-justify-content {
+        --pos:none;
+        justify-content: var(--pos);
+    }
+
     .sm-topics-gap {
         gap: 2px;
     }
