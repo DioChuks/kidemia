@@ -33,9 +33,9 @@
         <x-menu-icon />
       </header>
       <div class="h-5p flex items-center pl-5">
-        <div class="cursor-pointer transition-all transform-scale-d3-hover">
+        <a href="{{ route('home') }}" class="cursor-pointer transition-all transform-scale-d3-hover">
             <x-arrow-left-icon/>
-        </div>
+        </a>
       </div>
       <div class="w-full h-85p flex items-center justify-between sm-flex-col">
         <div class="w-quarter h-full sm-w-value h-md-sm" style="--rWidthValue:100%;--rH:90vh">
@@ -71,9 +71,10 @@
                 </div>
             </div>
         </div>
-        <div class="w-70p h-full bg-gray p-10 top-left-radius sm-w-value h-md-sm" style="--rWidthValue:100%;--rH:auto">
+        <div class="w-70p h-full flex flex-col gap-10 bg-gray p-10 top-left-radius sm-w-value h-md-sm" style="--rWidthValue:100%;--rH:auto" id="subjectPerformanceBox">
             <h2 class="text-dark mb-2">Subject Performance</h2>
-            <div class="w-full h-35 flex items-center gap-10 p-10 bg-semi-transparent border-2 border-white rounded-md sm-flex-col h-md-sm" style="--rH:auto">
+            @for ($zz=0; $zz < 5; $zz++)
+              <div class="w-full h-35 flex items-center gap-10 p-10 bg-semi-transparent border-2 border-white rounded-md sm-flex-col h-md-sm" style="--rH:auto">
                 <div class="w-quarter h-90p flex items-center sm-w-value" style="--rWidthValue:100%">
                     <div class="w-full h-80p flex flex-col items-center gap-5">
                       <x-pie-percent class="w-10 h-10 p-5 bg-conic-purple font-xl" progress="45" textSize="text-18" whitespace-bg='bg-semi-transparent' bg-type='bg-purple'/>
@@ -105,12 +106,13 @@
                     @endfor
                 </div>
             </div>
+            @endfor
         </div>
       </div>
     </div>
   </div>
 
-  @vite(['resources/js/modal.js'])
+  @vite(['resources/js/scrollable.js'])
 </body>
 
 </html>
