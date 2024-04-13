@@ -53,7 +53,7 @@
                         </div>
                         <div class="w-full h-8 flex items-center gap-5">
                             <h5 class="text-grey">Overall Performance</h5>
-                            <x-pie-percent class="w-8 h-8 p-5 bg-conic-pie" progress=45 text-size='16' whitespace-bg='bg-secondary' bg-type='bg-primary-10'/>
+                            <x-pie-percent class="w-8 h-8 p-5 bg-conic-pie font-xl" progress=45 text-size='16' whitespace-bg='bg-secondary' bg-type='bg-primary-10'/>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
             <div class="w-full h-35 flex items-center gap-10 p-10 bg-semi-transparent border-2 border-white rounded-md sm-flex-col h-md-sm" style="--rH:auto">
                 <div class="w-quarter h-90p flex items-center sm-w-value" style="--rWidthValue:100%">
                     <div class="w-full h-80p flex flex-col items-center gap-5">
-                      <x-pie-percent class="w-10 h-10 p-5 bg-conic-purple" progress="45" textSize="text-18" whitespace-bg='bg-semi-transparent' bg-type='bg-purple'/>
+                      <x-pie-percent class="w-10 h-10 p-5 bg-conic-purple font-xl" progress="45" textSize="text-18" whitespace-bg='bg-semi-transparent' bg-type='bg-purple'/>
                       <div class="flex items-center gap-5">
                         <span id="oldPercentS1">50%</span>
                         <img src="{{ asset('images/arrow-low.png') }}" alt="indicator-logo" />

@@ -425,6 +425,10 @@ select * {
     height: 100vh;
 }
 
+.h-max-full {
+    max-height: 100%;
+}
+
 .h-1 {
     height: 10px;
 }
