@@ -47,7 +47,7 @@
     </div>
    </div>
    <main class="h-auto flex flex-col justify-center items-center bg-brand-white">
-    <div class="w-full h-max-screen flex flex-col justify-around items-center p-20 gap-10 performance-report">
+    <div class="w-full h-auto flex flex-col justify-around items-center p-20 gap-10 performance-report">
      <div class="report-heading">
       <h1 class="text-dark">Performance Report Summary</h1>
      </div>
