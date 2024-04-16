@@ -58,6 +58,10 @@ Route::post('/test/create/questions', [TestController::class, 'startNewTest'])->
 
 Route::get('/test/ongoing/{test}', [TestController::class, 'test'])->name('test.ongoing');
 
+Route::post('/assessment/submit', function() {
+    return redirect()->route('test.result');
+})->name('assessment.submit');
+
 Route::get('/test/result', [ResultController::class, 'showTestResult'])->name('test.result');
 
 Route::get('/test/result/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');

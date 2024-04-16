@@ -8,7 +8,7 @@
    <div class="h-auto bg-brand-white">
     <div class="flex justify-between gap-5 p-20">
      @if ($type === 'test')
-     <a href="{{ route('take.test') }}" class="btn btn-primary"><- Back</a>
+     <a href="{{ route('home') }}" class="btn btn-primary"><- Back</a>
      <div class="flex flex-col items-center gap-5">
       <div class="w-6 h-6">
        <img src="{{ asset('images/logo2.png') }}" alt="img" class="w-inherit h-inherit" />

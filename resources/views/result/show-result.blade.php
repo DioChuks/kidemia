@@ -14,7 +14,7 @@
        <x-pie-box progress=45 answered='5/20' />
       </div>
      </div>
-     <div class="w-full h-4 flex flex-col gap-5">
+     <div class="w-full h-auto flex flex-col gap-5">
       <div class="flex items-start gap-10">
        <h4>Remark:</h4>
        <span>Poor</span>
@@ -27,10 +27,10 @@
     </section>
    </div>
    <div class="w-half flex justify-between items-center gap-5">
-    <a href="#" class="btn btn-primary sm-btn">View Corrections</a>
+    <a href="{{ route('test.corrections') }}" class="btn btn-primary sm-btn">View Corrections</a>
     <div class="flex items-center gap-10 text-dark">
-     <a href="#" class="inline-flex items-center text-14"><x-home-icon /> Home</a>
-     <a href="#" class="inline-flex items-center text-14"><x-activity-icon /> Dashboard</a>
+     <a href="{{ route('home') }}" class="inline-flex items-center text-14"><x-home-icon /> Home</a>
+     <a href="{{ route('show.user-dashboard') }}" class="inline-flex items-center text-14"><x-activity-icon /> Dashboard</a>
     </div>
    </div>
   </main>

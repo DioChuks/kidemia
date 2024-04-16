@@ -4,17 +4,17 @@
  <x-preloader />
  <div id="app" class="hidden">
   <div class="w-full h-max-screen bg-brand-white">
-   <form class="h-full flex flex-col justify-between gap-20 bg-brandWhite" method="POST" action="">
+   <form class="h-full flex flex-col justify-between gap-20 bg-brand-white" method="POST" action="{{ route('assessment.submit') }}" id="assessmentForm">
     @csrf
     <div class="w-full flex justify-between items-center ongoing-test-head">
      <div class="w-auto h-5">
       <img src="{{ asset('images/logo3.png') }}" alt="alt-img" class="w-inherit h-inherit" />
      </div>
      <div class="flex justify-between items-center mx-2 timer-box">
-      <h6>Time Left: <span id="timer">19min:59secs</span></h6>
+      <h4>Time Left: <span id="timer">19min:59secs</span></h4>
       <input type="number" name="minutes_left" id="minLeft" required hidden/>
       <input type="number" name="seconds_left" id="secsLeft" required hidden/>
-      <button class="btn btn-primary sm-btn" type="submit" id="open-load">Submit</button>
+      <button class="btn btn-primary sm-btn submit-btn" type="button" id="open-load">Submit</button>
      </div>
     </div>
     <div class="w-3-quarts mx-auto flex flex-col justify-center items-center">
@@ -79,6 +79,7 @@
     seconds = 59;
    }
 
+
    // Format time as "minutes: seconds"
    const formattedTime = `${minutes.toString().padStart(2, '0')}mins: ${seconds.toString().padStart(2, '0')}secs`;
    timerSpan.textContent = formattedTime; // Update timer display
@@ -94,6 +95,11 @@
     localStorage.setItem('ongoingAssessmentTime', `${minutes}:${seconds}`);
     setTimeout(updateTimer, 1000); // Call updateTimer again after 1 second
    }
+  }
+
+  //  clears timer from cache storage when the submit btn is clicked
+  function removeTimerCache() {
+    localStorage.removeItem("ongoingAssessmentTime");
   }
 
   // Check for saved time and update initial values
@@ -115,7 +121,7 @@
   const answerList = document.getElementById("answerList");
   const previousBtn = document.getElementById("previousBtn");
   const nextBtn = document.getElementById("nextBtn");
-  // const submitBtn = document.getElementById("submitBtn");
+  const submitBtn = document.querySelector(".submit-btn");
 
   function updateQuestion() {
    const question = questions[currentQuestionIndex];
@@ -134,7 +140,9 @@
     radioInput.value = index; // Store answer index as value
     listItem.appendChild(radioInput);
     const label = document.createElement("label");
-    label.for = `answer-${index}`;
+    // add the for attribute to the label element
+    label.htmlFor = `answer-${index}`;
+    label.classList.add("cursor-pointer");
     if (index === 0) {
       label.textContent = `A. ${answer}`;
     }
@@ -190,10 +198,22 @@
     });
   });
 
+  const loader = document.getElementById('modal');
+
   // Implement submit button functionality to collect answers (logic omitted for brevity)
-  // submitBtn.addEventListener("click", () => {
-  //  // ... collect answer selections and submit quiz logic
-  // });
+  submitBtn.addEventListener("click", () => {
+   // ... collect answer selections and submit quiz logic
+  //  clear timer
+    removeTimerCache();
+    loader.classList.add("flex");
+    loader.classList.remove("hidden");
+    delayFormSubmit();
+  });
+
+  function delayFormSubmit() {
+    // delay the form submit process for 3 seconds then allow it to proceed
+    setTimeout(() => document.getElementById("assessmentForm").submit(), 3000);
+  }
  </script>
 </body>
 <html>

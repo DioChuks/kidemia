@@ -34,7 +34,7 @@ if (openModalBtn) {
         });
         if (anyChecked) {
             modal.classList.remove("hidden");
-            modal.classList.add("visible");
+            modal.classList.add("flex");
     
             // Gather form data
             const formData = new FormData(form);

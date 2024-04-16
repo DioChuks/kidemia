@@ -16,7 +16,7 @@
             <li class="nav-item"><a href="#">Scheme</a></li>
             <li class="nav-item"><a href="#"><x-bell-icon /></a></li>
             <ul>
-              <li class="nav-item"><a href="#"><img src="{{ asset('images/Ellipse 1.svg') }}"
+              <li class="nav-item"><a href="{{ route('show.user-profile') }}"><img src="{{ asset('images/Ellipse 1.svg') }}"
                     alt="User-icon" /></a></li>
             </ul>
         </nav>
@@ -26,7 +26,7 @@
             class="absolute top-2 right-2 left-2 w-20 h-30 border flex flex-col justify-around items-center bg-brand-white rounded-sm">
             <li class="nav-item"><a href="#">Scheme</a></li>
             <a href="#" class="flex items-center gap-1 text-dark"><x-bell-icon /> Notifications</a>
-            <li class="nav-item"><a href="#" class="w-5 h-4 flex items-center gap-1"><img
+            <li class="nav-item"><a href="{{ route('show.user-profile') }}" class="w-5 h-4 flex items-center gap-1"><img
                   src="{{ asset('images/Ellipse 1.svg') }}" alt="User-icon" class="w-2 h-2" /> Account</a></li>
           </ul>
         </nav>

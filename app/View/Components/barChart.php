@@ -21,7 +21,9 @@ class barChart extends Component
     {
         if ($value <= 25) {
             return '#C83042';
-        } elseif ($value > 25 && $value < 75) {
+        } elseif ($value > 25 && $value < 40) {
+            return '#bf4c20';
+        } elseif ($value > 40 && $value < 65) {
             return '#f28729';
         } else {
             return '#16732d';

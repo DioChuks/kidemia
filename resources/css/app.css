@@ -61,6 +61,10 @@ select * {
     flex-shrink: 1;
 }
 
+.flex-grow {
+    flex-grow: 1;
+}
+
 .flex-col {
     flex-direction: column;
 }
@@ -95,6 +99,10 @@ select * {
 
 .self-stretch {
     align-self: stretch;
+}
+
+.content-center {
+    align-content: center;
 }
 
 .justify-between {
@@ -187,6 +195,46 @@ select * {
 
 .visible {
     display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.place-center {
+    place-items: center;
+}
+
+.place-start {
+    place-items: flex-start;
+}
+
+.place-end {
+    place-items: flex-end;
+}
+
+.place-self-start {
+    place-self: flex-start;
 }
 
 .mx-auto {
@@ -400,6 +448,10 @@ select * {
 
 .w-93p {
     width: 93%;
+}
+
+.w-95p {
+    width: 95%;
 }
 
 .h-inherit {
@@ -684,6 +736,14 @@ select * {
 
 .animate-scale-out {
     animation: scaleOut 1.5s ease-out;
+}
+
+.animate-show-border {
+    animation: showBorder 3s linear infinite;
+}
+
+.animate-spin-off {
+    animation: spinOff 3s linear infinite;
 }
 
 .animate-shake {
@@ -1090,6 +1150,10 @@ select * {
     background: var(--md2-light-primary);
 }
 
+.bg-primary-light {
+    background-color: var(--lightPrimaryColor); 
+}
+
 .bg-transparent {
     background-color: transparent;
 }
@@ -1323,6 +1387,10 @@ select * {
     font-family: "Century Gothic";
 }
 
+.list-numeric {
+    list-style-type: numeric;
+}
+
 .border-none {
     border: none;
 }
@@ -1345,6 +1413,10 @@ select * {
 
 .top-left-radius {
     border-radius: 10px 0px 0px 0px;
+}
+
+.top-left-radius-lg {
+    border-radius: 20px 0px 0px 0px;
 }
 
 .border-bottom {
@@ -1710,7 +1782,7 @@ header {
 
 .report-chart .report-box .piechart-progress:hover,
 .progress-number:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 .report-chart .report-box .piechart-progress .whitespace {
@@ -1815,15 +1887,15 @@ a {
     margin-bottom: 20px;
 }
 
-.analysis-section .analysis-box {
-    width: 280px;
+.analysis-box {
+    width: 200px;
     height: 200px;
     border-radius: 15px;
     padding: 10px;
     flex-grow: 1;
     margin: 0px 10px;
     flex-shrink: 1;
-    flex-basis: 280px;
+    flex-basis: 250px;
     background-color: var(--lightPrimaryColor);
     transition: all 0.3s ease;
 }
@@ -2425,7 +2497,6 @@ footer .dashboard-btn-box {
 
 .input-label:hover {
     background-color: var(--primary-color);
-    color: var(--primaryTextColor);
 }
 
 /* end of ongoing test */
@@ -2635,6 +2706,10 @@ footer .dashboard-btn-box {
     }
     .sm-w-value {
         width: var(--rWidthValue);
+    }
+
+    .sm-h-val {
+        height: var(--smallHeightValue);
     }
 
     .sm-text-value {

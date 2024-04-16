@@ -16,6 +16,7 @@ class assessmentSelector extends Component
         public string $subtitle,
         public string $img,
         public string $type,
+        public string $modalId,
     ){}
 
     /**
