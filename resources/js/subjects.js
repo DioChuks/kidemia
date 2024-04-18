@@ -14,8 +14,8 @@ subjectIds.forEach((subject) => {
             let type = subjectBtn.getAttribute('dta-type');
             subjectBtn.setAttribute('href', `/pick/${subject.value}/topic/${type}`);
           }
-          label.classList.remove('active');
+          label.classList.remove('subject-selected');
         });
-        card.classList.toggle('active');
+        card.classList.toggle('subject-selected');
     });
 });

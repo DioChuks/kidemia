@@ -1484,6 +1484,10 @@ select * {
     border-color: var(--secondaryBlueColor);
 }
 
+.border-transparent {
+    border-color: transparent;
+}
+
 .outline-none {
     outline: none;
 }
@@ -2236,7 +2240,6 @@ footer .dashboard-btn-box {
 }
 
 .subject-card-color-1 {
-    color: var(--primaryTextColor);
     background: rgba(255, 165, 0, 0.7);
     box-shadow: 0px -4px 4px 0px rgba(255, 165, 0, 0.25) inset,
         0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -2265,6 +2268,10 @@ footer .dashboard-btn-box {
 
 .subject-card:hover {
     transform: scale(1.1);
+}
+
+.subject-selected {
+    border: 3px solid var(--primaryTextColor);
 }
 
 .active::after {

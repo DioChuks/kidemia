@@ -7,7 +7,7 @@
       <div class="flex justify-end gap-10 h-max-screen">
         <div class="h-90p h-md-sm flex sm-d-none flex-col justify-end items-center p-20" style="--rH:50px">
           <div class="w-full h-half flex items-right">
-            <a href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-3 flex justify-center items-center bg-primary p-5 rounded-sm text-white text-14 font-lg cursor-pointer transition-all"><- Back</a>
+            <x-inputs.anchor-button href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-3 bg-primary p-5 text-white text-14 font-lg"><x-left-arrow-icon/> Back</x-inputs.anchor-button>
           </div>
           <div class="flex flex-col items-center justify-center gap-10 text-center text-white">
             <img src="{{ asset('images/KIDEMIA LOGO CC 4 -2.png') }}" alt="logo alt" class="w-30 h-30" />
@@ -20,7 +20,7 @@
         </div>
         <div class="w-70p sm-w-value h-full flex flex-col justify-end" style="--rWidthValue:100%">
           <div class="w-full h-95p sm-h-val flex flex-col justify-around gap-10 bg-brand-white top-left-radius-lg p-20" style="--smallHeightValue:100%">
-            <a href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-5 md-d-none flex justify-center items-center bg-primary p-10 rounded-sm text-white text-14 font-lg cursor-pointer transition-all"><- Back</a>
+            <x-inputs.anchor-button href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-5 bg-primary p-5 text-white text-14 font-lg"><x-left-arrow-icon/> Back</x-inputs.anchor-button>
             <div class="w-80p flex flex-col gap-10">
               <h3 class="text-dark ready-subject-title">You are writing <span id="subjects">Social Studies</span></h3>
               <div class="flex flex-col gap-10" id="subjectInstruction">
@@ -33,7 +33,7 @@
               </div>
             </div>
             <div class="ready-instructions">
-              <h1 class="mb-5 text-dark">Read All Instructions Before You Start</h1>
+              <h1 class="mb-5 text-dark sm-text-value" style="--textSmVal:18px">Read All Instructions Before You Start</h1>
               <div class="flex flex-col gap-10" id="subjectInstruction">
                 <ul class="flex flex-col items-start pl-5">
                   @for ($i = 1; $i <= 5; $i++)
@@ -45,7 +45,7 @@
             <div class="flex justify-end items-end">
               <div class="flex flex-col justify-center items-center gap-5" id="readyInfoBtn">
                 <p>If you are ready click on the button to begin</p>
-                <a href="{{ route('test.ongoing', '712e52-23e8hd-38hqdih-38ihdqw') }}" class="w-30 h-5 flex justify-center items-center bg-primary p-5 rounded-sm text-white text-14 font-lg cursor-pointer transition-all">Start</a>
+                <x-inputs.anchor-button href="{{ route('test.ongoing', '712e52-23e8hd-38hqdih-38ihdqw') }}" class="w-30 h-5 justify-center bg-primary p-5 text-white text-14 font-lg">Start</x-inputs.anchor-button>
               </div>
             </div>
           </div>

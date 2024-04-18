@@ -8,7 +8,7 @@
    <div class="h-auto bg-brand-white">
     <div class="flex justify-between gap-5 p-20">
      @if ($type === 'test')
-     <a href="{{ route('home') }}" class="btn btn-primary"><- Back</a>
+     <a href="{{ route('home') }}" class="btn btn-primary"><x-left-arrow-icon/> Back</a>
      <div class="flex flex-col items-center gap-5">
       <div class="w-6 h-6">
        <img src="{{ asset('images/logo2.png') }}" alt="img" class="w-inherit h-inherit" />
@@ -23,7 +23,7 @@
       </div>
      </div>
      @else
-     <a href="{{ route('take.exam') }}" class="btn btn-primary"><- Back</a>
+     <a href="{{ route('take.exam') }}" class="btn btn-primary"><x-left-arrow-icon/> Back</a>
      <div class="flex flex-col items-center gap-5">
       <div class="w-6 h-6">
        <img src="{{ asset('images/logo-pro.png') }}" alt="img" class="w-inherit h-inherit" />
@@ -42,23 +42,23 @@
       </a>
      </div>
      @endif
-       <a href="#" class="btn btn-primary" id="send-subject" dta-type="{{$type }}">Continue -></a>
+       <a href="#" class="btn btn-primary" id="send-subject" dta-type="{{$type }}">Continue <x-right-arrow-icon/></a>
     </div>
     <div class="w-full inline-flex justify-center items-center pick-subjects">
      <section class="h-auto">
       <div class="w-full h-full flex justify-center items-center p-10 gap-10">
-       <div class="flex flex-wrap justify-evenly items-start gap-10" id="subject-box">
+       <div class="w-90p flex flex-wrap justify-evenly items-start gap-10" id="subject-box">
         @for ($i = 1; $i <= 16; $i++)
          @if ($i <= 4)
-          <x-subject-card logo='image 4.png' class="subject-card-color-1" title='Social Studies' topicAmount=14
+          <x-subject-card logo='image 4.png' class="text-white subject-card-color-1" title='Social Studies' topicAmount=14
            :id=$i />
          @elseif ($i <= 8)
-          <x-subject-card logo='image 9.png' class="subject-card-color-2" title='English Language' topicAmount=14
+          <x-subject-card logo='image 9.png' class="text-white subject-card-color-2" title='English Language' topicAmount=14
            :id=$i />
          @elseif ($i <= 12)
-          <x-subject-card logo='image 5.png' class="subject-card-color-3" title='Mathematics' topicAmount=14 :id=$i />
+          <x-subject-card logo='image 5.png' class="text-white subject-card-color-3" title='Mathematics' topicAmount=14 :id=$i />
          @else
-          <x-subject-card logo='image 7.png' class="subject-card-color-4" title='Verbal Reasoning' topicAmount=14
+          <x-subject-card logo='image 7.png' class="text-white subject-card-color-4" title='Verbal Reasoning' topicAmount=14
            :id=$i />
          @endif
         @endfor

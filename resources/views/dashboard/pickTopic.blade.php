@@ -8,7 +8,7 @@
    <form action="#" class="flex flex-col pick-container" method="POST" id="topic-form">
     @csrf
     <div class="flex justify-between gap-10 p-20 pick-top-section">
-     <a href="{{ route('pick.subject', $type) }}" class="btn btn-primary sm-btn"><- Back</a>
+     <a href="{{ route('pick.subject', $type) }}" class="btn btn-primary sm-btn"><x-left-arrow-icon/> Back</a>
        <div class="flex flex-col items-center gap-5 pick-top-heading">
         <div class="w-6 h-6">
          <img src="{{ asset('images/logo2.png') }}" alt="img" class="w-inherit h-inherit" />
@@ -17,7 +17,7 @@
          <h3>Select up to 5 topics you want to write on</h3>
         </div>
        </div>
-       <button type="submit" id="open-load" class="btn btn-primary sm-btn">Continue -></button>
+       <button type="submit" id="open-load" class="btn btn-primary sm-btn">Continue <x-right-arrow-icon/></button>
     </div>
     <div class="inline-flex flex-col w-full h-auto">
       <input type="text" name="subject" value="{{$subject }}" hidden/>
