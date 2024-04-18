@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Century Gothic";
+    user-select: none;
 }
 
 a,
@@ -36,7 +37,7 @@ select * {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--infoColor);
+    background: var(--secondary-color);
 }
 
 /* Handle on hover */
@@ -760,6 +761,30 @@ select * {
 
 .overflow-auto {
     overflow: auto;
+}
+
+.overflow-y-space {
+    overflow-y: scroll;
+}
+
+.overflow-x-space {
+    overflow-x: scroll;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
 }
 
 .cursor-pointer {
@@ -1934,9 +1959,7 @@ a {
     font-size: 20px;
 }
 
-footer {
-    padding: 20px;
-}
+
 
 .footer .chart-container {
     margin-bottom: 50px;
