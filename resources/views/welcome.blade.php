@@ -2,14 +2,14 @@
 
 <body class="bg-brand-white">
   <x-preloader />
-  <div id="app" class="hidden">
+  <div id="app" class="hidden overflow-x-hidden">
     {{-- assessment modal --}}
     <x-assessment-selector modal-id='testModalBox' title='Test Yourself'
       subtitle='The test comprises of 20 questions to be answered in 20 mins' img='logo2.png' type='test'
       class="w-8 h-8" />
     <x-assessment-selector modal-id='examModalBox' title='Ready for an exam? 😃' subtitle='The exam comprises of 40 questions to be answered in 30 mins' img='logo-pro.png' type='exam' class='h-10'/>
     {{-- end assessment box --}}
-    <div class="h-max-screen top-section">
+    <div class="w-max-screen h-max-screen top-section">
       <header class="h-10p flex justify-between items-center bg-dark header">
         <div class="logo">
           <img src="{{ asset('images/KIDEMIA LOGO pro 2.png') }}" alt="Kidemia" class="w-inherit h-inherit" />
@@ -135,7 +135,7 @@
           </div>
         </div>
       </main>
-      <footer class="footer">
+      <footer class="w-max-screen p-10">
         <div class="flex sm-flex-col gap-5 chart-container">
           <div class="flex flex-col items-center w-half sm-w-value chart-box" style="--rWidthValue:100%">
             <div class="chart heading">
@@ -150,7 +150,7 @@
             <x-bar-chart :bars="['30', '45', '35', '55', '50']" title-id="recent-exam" />
           </div>
         </div>
-        <div id="assessment-history" class="w-full mb-5">
+        <div id="assessment-history" class="w-max-screen mb-5">
           <h2 class="text-dark mb-2">Assessment History</h2>
           <div class="w-full flex flex-col items-center gap-5">
             <div id="Frame1000001375" class="flex gap-5">
