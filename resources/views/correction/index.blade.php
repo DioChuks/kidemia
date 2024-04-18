@@ -12,13 +12,15 @@
           <h4>Total Time Used: <span id="timeUsed">10mins: 54 Secs</span></h4>
           <input type="number" name="minutes_left" id="minLeft" required hidden />
           <input type="number" name="seconds_left" id="secsLeft" required hidden />
-          <a class="p-10 bg-primary text-white rounded-sm" href="/">Dashboard</a>
+          <x-inputs.anchor-button class="bg-primary text-white" href="{{ route('home') }}">
+            Dashboard
+          </x-inputs.anchor-button>
         </div>
       </div>
       <div class="w-full h-90p flex gap-5">
         <div class="w-half h-full flex flex-col justify-evenly bg-brand-white">
           <div class="w-full mx-auto flex flex-col justify-center items-center">
-            <div class="w-3-quarts flex flex-col justify-center gap-10">
+            <div class="w-full flex flex-col justify-center gap-10 p-5">
               <h2 class="text-left">Question <span id="questionNumber"></span>:</h2>
               <div class="h-20 inline-flex flex-col items-start question-row" id="questionBox">
                 <h3 class="question font-sm" id="question"></h3>
@@ -29,12 +31,9 @@
             </div>
           </div>
           <div id="questionNumberBox" class="h-half flex flex-col justify-between">
-            <div id="questionBtnBox" class="w-full flex justify-around items-center">
-              <button type="button" class="btn bg-red text-dark border border-white sm-btn" id="previousBtn"
-                disabled><- Previous </button>
-              <button type="button" class="btn bg-lightSuccess text-dark border border-white sm-btn"
-                id="nextBtn">Next ->
-              </button>
+            <div id="questionBtnBox" class="w-full flex justify-center items-center gap-10">
+              <x-inputs.button class="bg-light-wine text-wine"><x-left-arrow-icon/> Previous</x-inputs.button>
+              <x-inputs.button class="bg-light-green text-green">Next <x-right-arrow-icon/></x-inputs.button>
             </div>
             <div id="questionNumbers" class="w-full h-auto flex items-center">
               <div class="w-full h-20 flex flex-wrap items-start gap-5">
