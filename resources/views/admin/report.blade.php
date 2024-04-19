@@ -28,15 +28,15 @@
       </header>
       <div class="w-full h-90p flex justify-between gap-5">
         <div class="w-15p h-full flex flex-col gap-10 items-start bg-white text-16 text-secondary p-5">
-          <div class="flex items-center gap-5 text-primary mt-5">
+          <div class="flex items-center gap-5 text-secondary mt-5">
             <x-grid-icon /> <span>Dashboard</span>
           </div>
-          <div class="w-full flex items-center gap-5 border-bottom border-secondary">
+          <a href="{{ route('admin.report') }}" class="w-full flex items-center gap-5 text-secondary border-bottom-3 border-secondary">
             <x-report-line-icon /> <span class="font-lg">Report</span>
-          </div>
-          <div class="w-full flex justify-between items-center gap-5 text-dark">
+          </a>
+          <a href="{{ route('admin.subjects') }}" class="w-full flex justify-between items-center gap-5 text-dark">
             <h3>Subjects </h3><span>(12)</span>
-          </div>
+          </a>
         </div>
         <div class="w-85p h-full flex flex-col gap-5 items-center p-10 ml-5 mr-5 overflow-auto">
           <div class="w-full h-full flex-flex-col justify-evenly items-center gap-10">

@@ -197,7 +197,7 @@
                       @if ($i <= 2)
                         <td class="text-center"><a href="#" class="text-primary">Write Test</a></td>
                       @else
-                        <td class="text-center"><a href="{{ route('test.result') }}" class="text-primary">View
+                        <td class="text-center"><a href="{{ route('test.result', 'ee66e6e6e6deudh') }}" class="text-primary">View
                             Result</a></td>
                       @endif
                     </tr>
@@ -249,7 +249,7 @@
                       @if ($i <= 2)
                         <td class="text-center"><a href="#" class="text-primary">Write Test</a></td>
                       @else
-                        <td class="text-center"><a href="{{ route('test.result') }}" class="text-primary">View
+                        <td class="text-center"><a href="{{ route('test.result', 'f7f7f7309jd382fhc') }}" class="text-primary">View
                             Result</a></td>
                       @endif
                     </tr>

@@ -21,6 +21,29 @@ select * {
     background-color: var(--light10Primary-color);
 }
 
+.appearance-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -o-appearance: none;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.even-el-bg:nth-child(even) {
+    background-color: var(--elBg);
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
 .flex {
     display: flex;
 }
@@ -1075,6 +1098,10 @@ select * {
     padding-bottom: 20px;
 }
 
+.bg-none {
+    background-color: none;
+}
+
 .bg-primary {
     background-color: var(--primary-color);
 }
@@ -1149,6 +1176,10 @@ select * {
 
 .bg-light-blue {
     background-color: var(--secondaryBlueColor);
+}
+
+.bg-light-info {
+    background-color: var(--lightInfoColor);
 }
 
 .bg-semi-black {
@@ -1448,6 +1479,14 @@ select * {
     border-bottom: 1px solid;
 }
 
+.border-bottom-2 {
+    border-bottom: 2px solid;
+}
+
+.border-bottom-3 {
+    border-bottom: 3px solid;
+}
+
 .border-light-grey {
     border-color: var(--borderColor);
 }
@@ -1458,6 +1497,10 @@ select * {
 
 .border-primary {
     border-color: var(--primary-color);
+}
+
+.border-secondary {
+    border-color: var(--infoColor);
 }
 
 .border-primary-light {
@@ -1617,6 +1660,7 @@ select * {
     --secondaryBlueColor: #3f4f79;
     --primaryWineColor: #c83042;
     --purpleColor: #860086;
+    --lightInfoColor: rgba(191, 76, 32, 0.10);
     --greyGradientColor: linear-gradient(
             0deg,
             rgba(72, 71, 224, 0.05) 0%,
@@ -2759,8 +2803,36 @@ footer .dashboard-btn-box {
         height: 100%;
     }
 
+    .sm-md-width {
+        width: var(--rWidthValue);
+    }
+
+    .sm-md-justify {
+        justify-content: var(--ct);
+    }
+
+    .sm-md-items {
+        align-items: var(--it);
+    }
+
+    .sm-md-flex-dir {
+        flex-direction: var(--rFld);
+    }
+
+    .sm-md-wrap {
+        flex-wrap: var(--rWrapValue);
+    }
+
+    .sm-md-gap {
+        gap: var(--rGap);
+    }
+
     .h-md-sm {
         --rH: 0;
         height: var(--rH);
+    }
+
+    .sm-md-pad {
+        padding: var(--rPad);
     }
 }

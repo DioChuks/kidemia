@@ -11,7 +11,7 @@ window.addEventListener("blur", () => {
                 "Content-Type": "application/json", // Set content type for JSON data
                 'X-CSRF-Token': csrfToken
             },
-            body: JSON.stringify({ id: testId }), // Send ID in request body
+            body: JSON.stringify({ assessment_id: testId }), // Send ID in request body
         })
             .then((response) => {
                 if (response.ok) {

@@ -20,7 +20,7 @@
         </div>
         <div class="w-70p sm-w-value h-full flex flex-col justify-end" style="--rWidthValue:100%">
           <div class="w-full h-95p sm-h-val flex flex-col justify-around gap-10 bg-brand-white top-left-radius-lg p-20" style="--smallHeightValue:100%">
-            <x-inputs.anchor-button href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-5 bg-primary p-5 text-white text-14 font-lg"><x-left-arrow-icon/> Back</x-inputs.anchor-button>
+            <x-inputs.anchor-button href="{{ route('pick.topic', [$id, $type]) }}" class="w-10 h-5 bg-primary p-5 text-white text-14 font-lg md-d-none"><x-left-arrow-icon/> Back</x-inputs.anchor-button>
             <div class="w-80p flex flex-col gap-10">
               <h3 class="text-dark ready-subject-title">You are writing <span id="subjects">Social Studies</span></h3>
               <div class="flex flex-col gap-10" id="subjectInstruction">

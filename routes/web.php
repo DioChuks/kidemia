@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ExamController;
@@ -56,13 +57,11 @@ Route::get('/pick/{subject}/topic/{type}', [TopicController::class, 'index'])->n
 
 Route::post('/test/create/questions', [TestController::class, 'startNewTest'])->name('test.topics');
 
-Route::get('/test/ongoing/{test}', [TestController::class, 'test'])->name('test.ongoing');
+Route::get('/assessment/ongoing/{test}', [TestController::class, 'test'])->name('test.ongoing');
 
-Route::post('/assessment/submit', function() {
-    return redirect()->route('test.result');
-})->name('assessment.submit');
+Route::post('/assessment/submit', [AssessmentController::class, 'submitAssessment'])->name('assessment.submit');
 
-Route::get('/test/result', [ResultController::class, 'showTestResult'])->name('test.result');
+Route::get('/test/result/{id}', [ResultController::class, 'showTestResult'])->name('test.result');
 
 Route::get('/test/result/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');
 
@@ -80,6 +79,7 @@ Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamS
 // });
 
 // admin routes
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/report', [AdminController::class, 'showReport'])->name('admin.report');
+Route::get('/admin/subjects', [AdminController::class, 'showSubjects'])->name('admin.subjects');
 
 // require __DIR__.'/auth.php';

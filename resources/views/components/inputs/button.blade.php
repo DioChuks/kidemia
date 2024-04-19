@@ -1,1 +1,1 @@
-<button {{$attributes->merge(['class' => 'flex items-center gap-5 p-10 rounded-sm border border-white cursor-pointer transition-all']) }}>{{ $slot }}</button>
+<button {{$attributes->merge(['class' => 'flex items-center gap-5 p-10 rounded-sm border border-white cursor-pointer transition-all', 'id' => '']) }}>{{ $slot }}</button>
