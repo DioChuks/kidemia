@@ -442,6 +442,10 @@ select * {
     max-width: 600px;
 }
 
+.min-w-val {
+    min-width: var(--minWidth);
+}
+
 .w-55p {
     width: 55%;
 }

@@ -157,7 +157,7 @@
               <button id="historySubject" class="btn btn-primary opacity-d5 sm-btn">Subjects</button>
               <button id="historyTopic" class="btn btn-primary sm-btn">Topics</button>
             </div>
-            <div id="subjects-wrapper" class="hidden w-3-quarts">
+            <div id="subjects-wrapper" class="hidden w-3-quarts overflow-x-auto">
               <table id="fl-table" class="w-full whitespace-no border-none border-collapse">
                 <thead class="bg-primary">
                   <tr class="h-4 text-white">
@@ -209,7 +209,7 @@
                 {{-- {{ $assessment->links() }} --}}
               </div>
             </div>
-            <div id="topics-wrapper" class="w-3-quarts">
+            <div id="topics-wrapper" class="w-3-quarts overflow-x-auto">
               <table id="fl-table" class="w-full whitespace-no border-none border-collapse">
                 <thead class="bg-primary">
                   <tr class="h-4 text-white">

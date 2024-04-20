@@ -63,7 +63,7 @@ Route::post('/assessment/submit', [AssessmentController::class, 'submitAssessmen
 
 Route::get('/test/result/{id}', [ResultController::class, 'showTestResult'])->name('test.result');
 
-Route::get('/test/result/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');
+Route::get('/test/result/{id}/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');
 
 // terminate test or exam status
 Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamStatus'])->name('terminate.test-exam');
