@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('category_id')->on('categories')->references('id');
             $table->foreign('user_id')->on('users')->references('id');
             $table->string('guardian_email');
+            $table->boolean('category_status')->default(true);
             $table->timestamps();
         });
     }

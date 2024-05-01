@@ -56,4 +56,20 @@ class AuthController extends Controller
         }
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
+
+    public function showRegisterGuardian()
+    {
+        return view('auth.guardian');
+    }
+
+    public function registerGuardian(Request $request)
+    {
+        // Validate user request data
+        $request->validate([
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ]);
+
+        return redirect()->route('show.user-profile');
+    }
 }

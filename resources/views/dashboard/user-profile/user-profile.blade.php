@@ -36,19 +36,20 @@
         <div
           class="w-80 h-full inline-flex flex-col items-center justify-center pr-5 pl-5 pt-5 pb-5 rounded-lg bg-white overflow-hidden Frame2608385">
           <div class="w-full inline-flex flex-col justify-start items-center gap-10 self-stretch Frame2608394">
-            <div class="flex flex-col justify-center items-center gap-5 Frame2608387">
-              <img class="w-10 h-10 rounded-full border-3 border-primary Ellipse1"
-                src="{{ asset('images/Ellipse 1.svg') }}" />
-              <div class="inline-flex justify-start items-start gap-10 Frame2608386">
+            <figure class="flex flex-col justify-center items-center gap-5 Frame2608387">
+              <input type="file" name="profile_picture" id="profilePicture" class="hidden"/>
+              <label for="profilePicture">
+                <img class="w-10 h-10 rounded-full border-3 border-primary Ellipse1" src="{{ asset('images/Ellipse 1.svg') }}" alt="User Profile Picture" />
+              </label>
+              <figcaption class="inline-flex justify-start items-start gap-10 Frame2608386">
                 <x-cloud-upload-icon />
-                <div class="text-dark text-14 font-md font-gothic TapToUploadYourPicture"><span
-                    style="line-height: 19.60px; word-wrap: break-word">Tap to </span><span
-                    class="text-primary font-md text-16 font-gothic"
-                    style="line-height: 22.40px; word-wrap: break-word">upload</span><span
-                    class="text-dark text-14 font-md font-gothic" style="line-height: 19.60px; word-wrap: break-word">
-                    your picture</span></div>
-              </div>
-            </div>
+                <span class="text-dark text-14 font-md font-gothic TapToUploadYourPicture">
+                  <span style="line-height: 19.60px; word-wrap: break-word">Tap to </span>
+                  <span class="text-primary font-md text-16 font-gothic" style="line-height: 22.40px; word-wrap: break-word">upload</span>
+                  <span class="text-dark text-14 font-md font-gothic" style="line-height: 19.60px; word-wrap: break-word"> your picture</span>
+                </span>
+              </figcaption>
+            </figure>
             <div class="w-full flex flex-col justify-center items-start Frame2608390">
               <div class="w-full flex flex-col justify-start items-start gap-2 pl-2 pr-2 pt-2 pb-2 Frame165">
                 <div class="inline-flex justify-start items-start gap-5 Frame166"

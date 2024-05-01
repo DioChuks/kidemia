@@ -39,6 +39,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::prefix('auth')->group(function () {
         Route::get('/register', 'showRegister')->name('show.register');
         Route::post('/register/onboard-user', 'register')->name('register');
+        Route::get('/register-guardian', 'showRegisterGuardian')->name('show.register.guardian');
+        Route::post('/guardian-registration', 'registerGuardian')->name('register.guardian');
         Route::get('/login', 'showLogin')->name('show.login');
         Route::post('/login', 'login')->name('login');
         Route::get('/forgot-password', 'showForgot')->name('show.forgot');
