@@ -47,7 +47,7 @@
             </a>
             <br>
             <div class="w-full flex flex-col justify-between items-start gap-5 flex-wrap">
-              <div class="w-80p flex flex-col gap-5 relative bg-white rounded-xs p-5">
+              <div class="w-80p flex flex-col gap-5 relative bg-white rounded-xs p-5 shadow-md">
                 <div class="w-full h-4 flex items-center justify-between">
                   <h4>Question 1.</h4>
                   <select name="topic" id="topic"
@@ -95,8 +95,9 @@
                     <span>Link to Media</span>
                   </div>
                   <div class="justify-start items-center gap-2 flex text-primary">
-                      <label for="correctionVideo" class="flex items-center gap-5 cursor-pointer"><x-helper.upload-icon /> Upload Media</label>
-                      <input type="file" name="correction_video" id="correctionVideo" class="hidden"/>
+                    <label for="correctionVideo" class="flex items-center gap-5 cursor-pointer"><x-helper.upload-icon />
+                      Upload Media</label>
+                    <input type="file" name="correction_video" id="correctionVideo" class="hidden" />
                   </div>
                   <div class="justify-start items-center gap-2 flex text-base-wine cursor-pointer">
                     <x-helper.trash-icon />
@@ -106,13 +107,13 @@
               </div>
               <div class="w-80p flex items-center justify-end gap-10">
                 <div class="flex items-center gap-5 text-primary cursor-pointer">
-                    <div class="flex items-center bg-primary text-white rounded-full">
-                        <x-helper.add-icon/>
-                    </div>
-                    <span>Add Question</span>
+                  <div class="flex items-center bg-primary text-white rounded-full">
+                    <x-helper.add-icon />
+                  </div>
+                  <span>Add Question</span>
                 </div>
                 <div class="h-3 flex items-center gap-5 bg-primary text-white p-5 rounded-xs cursor-pointer">
-                    <span>Save and Continue</span>
+                  <span>Save and Continue</span>
                 </div>
               </div>
             </div>
@@ -120,9 +121,12 @@
         </div>
       </div>
       {{-- link to media modal --}}
-      <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal" id="customModal">
-        <form class="relative w-half h-3-quarts flex flex-col items-start justify-around gap-10 bg-white text-dark p-10 rounded-md modal-content animate-slideDown" method="post" action="">
-          @csrf
+      <div
+        class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all LinkMediaModal"
+        id="customModal">
+        <div
+          class="relative w-half h-3-quarts flex flex-col items-start justify-around gap-10 bg-white text-dark p-10 rounded-md modal-content animate-slideDown"
+          method="post" action="">
           <span class="absolute w-3 h-3 top-2 right-2 text-red text-24 cursor-pointer" id="closeModal">&times;</span>
           <h1 class="text-secondary sm-text-value" style="--textSmVal:13px;">Link to Video</h1>
           <div class="w-full flex flex-col gap-5">
@@ -131,13 +135,18 @@
           </div>
           <div class="w-full flex flex-col gap-5">
             <label for="videoLink" class="font-lg">Preview:</label>
-            <img src="{{ asset('images/ion_image.svg') }}" class="w-full h-10 border border-light-grey rounded-md" name="video_link_preview" id="videoLinkPreview" />
+            <img src="{{ asset('images/ion_image.svg') }}" class="w-full h-15 border border-light-grey rounded-md"
+              name="video_link_preview" id="videoLinkPreview" />
           </div>
           <div class="w-full flex items-center justify-center gap-10">
-            <button class="w-half h-5 flex items-center justify-center gap-5 bg-white rounded-xs border border-primary rounded-xs text-primary cursor-pointer" type="button" id="closeModal">Cancel</button>
-            <button class="w-half h-5 flex items-center justify-center gap-5 bg-primary text-white p-5 rounded-xs border-none cursor-pointer" type="button">Save and Continue</button>
+            <button
+              class="w-half h-5 flex items-center justify-center gap-5 bg-white rounded-xs border border-primary rounded-xs text-primary cursor-pointer"
+              type="button" id="closeModal">Cancel</button>
+            <button
+              class="w-half h-5 flex items-center justify-center gap-5 bg-primary text-white p-5 rounded-xs border-none cursor-pointer"
+              type="button">Save and Continue</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -197,6 +206,96 @@
         });
       });
     });
+
+    const videoLinkInput = document.getElementById('videoLink');
+    const videoLinkPreview = document.getElementById('videoLinkPreview');
+
+    // Function to update the preview image
+    function updatePreview() {
+      const videoLink = videoLinkInput.value.trim();
+      if (videoLink === '') {
+        videoLinkPreview.src = "{{ asset('images/ion_image.svg') }}";
+        return;
+      }
+
+      const videoInfo = extractVideoInfo(videoLink);
+
+      if (videoInfo) {
+        const {
+          platform,
+          videoId
+        } = videoInfo;
+        const thumbnailUrl = getThumbnailUrl(platform, videoId);
+        videoLinkPreview.src = thumbnailUrl;
+      } else {
+        // Handle invalid links
+        videoLinkPreview.src = 'https://via.placeholder.com/150';
+      }
+    }
+
+    // Helper function to extract video information from the link
+    function extractVideoInfo(url) {
+      const youtubeRegex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+      const tiktokRegex = /^.*(tiktok.com\/@[^/]+\/video\/|t.co\/)[^/\s]+/;
+      const instagramRegex = /^.*(instagram.com\/p\/|instagr.am\/p\/)[^/\s]+/;
+      const facebookRegex = /^.*(facebook.com\/[^/]+\/videos\/|fb.watch\/)[^/\s]+/;
+
+      const youtubeMatch = url.match(youtubeRegex);
+      if (youtubeMatch && youtubeMatch[7].length === 11) {
+        return {
+          platform: 'youtube',
+          videoId: youtubeMatch[7]
+        };
+      }
+
+      const tiktokMatch = url.match(tiktokRegex);
+      if (tiktokMatch) {
+        const videoId = tiktokMatch[0].split('/').pop();
+        return {
+          platform: 'tiktok',
+          videoId
+        };
+      }
+
+      const instagramMatch = url.match(instagramRegex);
+      if (instagramMatch) {
+        const videoId = instagramMatch[0].split('/').pop();
+        return {
+          platform: 'instagram',
+          videoId
+        };
+      }
+
+      const facebookMatch = url.match(facebookRegex);
+      if (facebookMatch) {
+        const videoId = facebookMatch[0].split('/').pop();
+        return {
+          platform: 'facebook',
+          videoId
+        };
+      }
+
+      return null;
+    }
+
+    // Function to get the thumbnail URL based on the platform and video ID
+    function getThumbnailUrl(platform, videoId) {
+      switch (platform) {
+        case 'youtube':
+          return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+        case 'tiktok':
+          return `https://www.tiktok.com/@tiktok/video/${videoId}`;
+        case 'instagram':
+          return `https://instagram.com/p/${videoId}/media/?size=l`;
+        case 'facebook':
+          return `https://graph.facebook.com/${videoId}/picture?type=normal`;
+        default:
+          return 'https://via.placeholder.com/150';
+      }
+    }
+
+    // Add event listener to the video link input to update the preview
+    videoLinkInput.addEventListener('input', updatePreview);
   </script>
   @vite(['resources/js/modal.js'])
 </body>

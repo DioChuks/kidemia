@@ -39,7 +39,7 @@
             <h3>Subjects </h3><span>({{ count($subjects) }})</span>
           </a>
           @foreach ($subjects as $subject)
-            <a href="{{ route('admin.subjects') }}"
+            <a href="{{ route('admin.new-question', $subject['uuid']) }}"
               class="w-full text-center text-dark">
               {{ $subject['subject'] }}
             </a>

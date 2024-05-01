@@ -1,19 +1,19 @@
 // Get the modal
-var modal = document.getElementById("customModal");
+const modal = document.getElementById("customModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("openBtn");
+const btn = document.getElementById("openBtn");
 
 // get the button that closes the modal
-var close = document.getElementById("closeModal");
+const closeModalButtons = document.querySelectorAll("#closeModal");
 
 // add eventListeners
 btn.addEventListener("click", () => {
     openModal();
 });
 
-close.addEventListener("click", () => {
-    closeModal();
+closeModalButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
 });
 
 // When the user clicks on the button, open the modal

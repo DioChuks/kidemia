@@ -34,6 +34,7 @@ class AdminController extends Controller
         $subjects = [
             [
                 "subject" => "Mathematics",
+                "uuid" => "x9dwd-3dnod3-fnd39d-fwj",
                 "questions" => [
                     "What is x + 1 = 7? Find x",
                     "Solve 299 - (-299)",
@@ -49,6 +50,7 @@ class AdminController extends Controller
             ],
             [
                 "subject" => "English Language",
+                "uuid" => "9fr0j-fe9jd-fwejw-hfid",
                 "questions" => [
                     "What is a verb?",
                     "What is a clause?",
@@ -65,6 +67,7 @@ class AdminController extends Controller
             ],
             [
                 "subject" => "Verbal Reasoning",
+                "uuid" => "oefo-30dj-pwi3d-39hd9",
                 "questions" => [
                     "Identify the word that is the opposite of 'diligent'",
                     "Choose the word that best completes the sentence: 'The politician's speech was _____ and failed to address the concerns of the public.'",
@@ -82,6 +85,7 @@ class AdminController extends Controller
             ],
             [
                 "subject" => "History",
+                "uuid" => "wfhq-3nidw-fwiqd-msl3d",
                 "questions" => [
                     "Which ancient civilization is credited with developing one of the earliest writing systems, cuneiform?",
                     "What was the primary cause of the American Revolution?",
