@@ -65,6 +65,9 @@ Route::get('/test/result/{id}', [ResultController::class, 'showTestResult'])->na
 
 Route::get('/test/result/{id}/corrections', [ResultController::class, 'showTestCorrection'])->name('test.corrections');
 
+Route::get('/exam/result/{id}', [ResultController::class, 'showExamResult'])->name('exam.result');
+Route::get('/exam/result/{id}/corrections', [ResultController::class, 'showExamCorrection'])->name('exam.corrections');
+
 // terminate test or exam status
 Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamStatus'])->name('terminate.test-exam');
 
@@ -81,5 +84,8 @@ Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamS
 // admin routes
 Route::get('/admin/report', [AdminController::class, 'showReport'])->name('admin.report');
 Route::get('/admin/subjects', [AdminController::class, 'showSubjects'])->name('admin.subjects');
+Route::get('/admin/add/question', [AdminController::class, 'addQuestion'])->name('admin.add-question');
+Route::get('/admin/new/question/{subject}', [AdminController::class, 'newQuestion'])->name('admin.new-question');
+Route::post('/admin/create/q/{subject}', [AdminController::class, 'createQuestion'])->name('admin.create-question');
 
 // require __DIR__.'/auth.php';

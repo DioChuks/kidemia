@@ -24,8 +24,8 @@ select * {
 .appearance-none {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
     -o-appearance: none;
+    appearance: none;
 }
 
 .no-pointer-events {
@@ -384,6 +384,10 @@ select * {
 
 .w-10 {
     width: 100px;
+}
+
+.w-15 {
+    width: 150px;
 }
 
 .w-20 {
@@ -778,6 +782,10 @@ select * {
     animation: shake 300ms;
 }
 
+.animate-slideDown {
+    animation: slideDown 1s linear;
+}
+
 .whitespace-no {
     white-space: nowrap;
 }
@@ -826,6 +834,18 @@ select * {
     cursor: not-allowed;
 }
 
+.-z-1 {
+    z-index: -1;
+}
+
+.-z-10 {
+    z-index: -10;
+}
+
+.-z-99 {
+    z-index: -99;
+}
+
 .z-1 {
     z-index: 1;
 }
@@ -848,6 +868,10 @@ select * {
 
 .z-99 {
     z-index: 99;
+}
+
+.z-100 {
+    z-index: 100;
 }
 
 .m-auto {
@@ -1211,7 +1235,11 @@ select * {
 }
 
 .bg-primary-light {
-    background-color: var(--lightPrimaryColor); 
+    background-color: var(--lightPrimaryColor);
+}
+
+.bg-opaque-blue {
+    background-color: var(--opaqueBlueColor);
 }
 
 .bg-transparent {
@@ -1230,6 +1258,11 @@ select * {
         var(--purpleColor) calc(var(--progress) * 1%),
         transparent calc(var(--progress) * 1%)
     );
+}
+
+.bg-color {
+    --bg: none;
+    background-color: var(--bg);
 }
 
 /* background hover */
@@ -1276,6 +1309,10 @@ select * {
 
 .text-wine {
     color: var(--primaryWineColor);
+}
+
+.text-base-wine {
+    color: var(--lightWineColor);
 }
 
 .text-red {
@@ -1635,7 +1672,8 @@ select * {
 }
 
 .shadow-sm {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .shadow-md {
@@ -1663,8 +1701,9 @@ select * {
     --primaryBlueColor: #0147ff;
     --secondaryBlueColor: #3f4f79;
     --primaryWineColor: #c83042;
+    --lightWineColor: #EB5757;
     --purpleColor: #860086;
-    --lightInfoColor: rgba(191, 76, 32, 0.10);
+    --lightInfoColor: rgba(191, 76, 32, 0.1);
     --greyGradientColor: linear-gradient(
             0deg,
             rgba(72, 71, 224, 0.05) 0%,
@@ -1688,6 +1727,7 @@ select * {
     --inputColor: #e8eaee;
     --progressCircleColor: rgba(16, 16, 16, 0.5);
     --p: 0px;
+    --opaqueBlueColor: rgba(72, 71, 224, 0.08);
 }
 
 .preloader {
@@ -1722,6 +1762,18 @@ select * {
     }
     75% {
         transform: translate(-0.2rem);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
@@ -2010,8 +2062,6 @@ a {
     font-weight: 600;
     font-size: 20px;
 }
-
-
 
 .footer .chart-container {
     margin-bottom: 50px;
@@ -2580,11 +2630,14 @@ footer .dashboard-btn-box {
 /* end of ongoing test */
 
 /* result */
+.small-box {
+    --bHeight: 40px;
+}
 .small-box::before {
     position: absolute;
     content: "";
     width: 100%;
-    height: 40px;
+    height: var(--bHeight);
     top: 0;
     background-color: var(--infoColor);
 }

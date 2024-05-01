@@ -4,14 +4,14 @@
   <x-preloader />
   <div id="app" class="hidden">
     <main class="relative w-full h-max-screen flex flex-col justify-evenly items-center bg-brand-white element-before">
-      <div class="w-3-quarts h-50 flex flex-col justify-evenly p-5 items-center gap-5 bg-brand-white rounded-sm shadow-auth z-1">
+      <div class="w-3-quarts h-50 flex flex-col justify-evenly p-5 items-center gap-5 bg-brand-white rounded-sm shadow-auth z-1 animate-slideDown">
         <div class="h-8 r-img">
           <img src="{{ asset('images/logo2.png') }}" alt="logo-pro-1" class="w-inherit h-inherit" />
         </div>
         <header class="flex flex-col justify-between items-center gap-5" id="formHeader">
           <div id="title">
             <h2 class="text-center">Forgot password</h2>
-            <p class="font-xs text-dark text-center">Place your email to receive you reset link</p>
+            <p class="font-xs text-dark text-center">Place your email to receive your reset link</p>
           </div>
 
         </header>

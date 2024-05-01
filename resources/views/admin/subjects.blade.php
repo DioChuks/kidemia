@@ -66,7 +66,7 @@
               </div>
             </div>
             {{-- viewing subjects and its data --}}
-            <div class="w-full h-auto flex flex-col justify-center items-center text-dark bg-white rounded-sm">
+            <div class="w-full h-auto flex flex-col justify-center items-center text-dark bg-white rounded-sm shadow-md">
               <div class="w-full flex justify-end items-center gap-10 p-10">
                 <div class="w-20 h-4 flex items-center justify-center gap-5 rounded-xs bg-inputGrey">
                   <label for="searchSubject" class="h-inherit flex items-center"><x-helper.search-icon /></label>
@@ -81,7 +81,7 @@
                       <option value="subject">Subject</option>
                       <option value="topic">Topic</option>
                     </select>
-                    <label for="filterSubject" class="no-pointer-events z-10"><x-helper.filter-icon /></label>
+                    <label for="filterSubject" class="no-pointer-events z-1"><x-helper.filter-icon /></label>
                   </div>
                 </div>
                 <div class="w-auto h-4 flex items-center justify-center gap-5">
@@ -122,7 +122,7 @@
                   </tbody>
                 </table>
               </div>
-
+              {{-- js for filter dropdown --}}
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
         class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal"
         id="customModal">
         <form
-          class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content"
+          class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content animate-slideDown"
           method="post" action="">
           @csrf
           <span

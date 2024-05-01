@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid');
+            $table->uuid()->unique();
             $table->unsignedBigInteger('subject_id');
             $table->longText('topics');
             $table->unsignedBigInteger('user_id');

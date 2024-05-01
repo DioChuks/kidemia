@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -98,5 +99,44 @@ class AdminController extends Controller
             ],
         ];
         return view('admin.subjects', compact('subjects'));
+    }
+
+    public function addQuestion()
+    {
+        $subjects = [
+            [
+                "name" => "Mathematics",
+                "uuid" => "x9dwd-3dnod3-fnd39d-fwj"
+            ],
+            [
+                "name" => "English Language",
+                "uuid" => "9fr0j-fe9jd-fwejw-hfid"
+            ],
+            [
+                "name" => "Verbal Reasoning",
+                "uuid" => "oefo-30dj-pwi3d-39hd9"
+            ],
+            [
+                "name" => "History",
+                "uuid" => "wfhq-3nidw-fwiqd-msl3d"
+            ],
+        ];
+
+        return view('admin.question.index', compact('subjects'));
+    }
+
+    public function newQuestion($subject)
+    {
+        // $uuid = $subject->uuid;
+        return view('admin.question.create', compact('subject'));
+    }
+
+    /*
+    * Create a new question from the request
+    * for a subject with given topic
+    **/
+    public function createQuestion(Request $request)
+    {
+        return 'question created';
     }
 }

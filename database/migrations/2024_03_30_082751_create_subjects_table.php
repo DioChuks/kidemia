@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
+            $table->uuid()->unique();
             $table->string('name');
+            $table->string('category_id');
             $table->timestamps();
         });
     }

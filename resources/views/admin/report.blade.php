@@ -93,12 +93,17 @@
                   title="{{ $cardConfig[$index]['title'] }}" :amount="$value" :class="$cardConfig[$index]['class']" :type="$cardConfig[$index]['type']" />
               @endforeach
             </div>
+            <br>
+            <div class="w-full h-half flex items-center gap-10">
+              <x-bar-chart :bars="['30', '15', '5', '60', '90']" title-id="recent-test" class="bg-white rounded-sm"/>
+              <x-bar-chart :bars="['30', '45', '35', '55', '50']" title-id="recent-exam" class="bg-white rounded-sm"/>
+            </div>
           </div>
         </div>
       </div>
       {{-- add subject modal --}}
       <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal" id="customModal">
-        <form class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content" method="post" action="">
+        <form class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content animate-slideDown" method="post" action="">
           @csrf
           <span class="absolute w-3 h-3 flex justify-center items-center top-2 right-2 text-dark text-20 rounded-md border border-dark cursor-pointer text-hover-color" id="closeModal" style="--textColor:crimson;">&times;</span>
           <h1 class="text-dark sm-text-value" style="--textSmVal:13px;">
@@ -120,7 +125,7 @@
           </div>
           <div class="w-3-quarts flex items-center justify-between gap-5">
             <button class="w-half p-10 border-none outline-none rounded-sm bg-primary-grad22 text-primary cursor-pointer" type="submit">Save and Close</button>
-            <button class="w-half p-10 border-none outline-none rounded-sm bg-primary text-white cursor-pointer" type="submit">Add Question</button>
+            <a href="{{ route('admin.add-question') }}" class="w-half p-10 border-none outline-none rounded-sm bg-primary text-center text-white cursor-pointer" type="submit">Add Question</a>
           </div>
         </form>
       </div>

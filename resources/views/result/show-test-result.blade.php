@@ -27,7 +27,7 @@
     </section>
    </div>
    <div class="w-half flex justify-between items-center gap-5">
-    <a href="{{ route('test.corrections') }}" class="btn btn-primary sm-btn">View Corrections</a>
+    <a href="{{ route('test.corrections', $id) }}" class="btn btn-primary sm-btn">View Corrections</a>
     <div class="flex items-center gap-10 text-dark">
      <a href="{{ route('home') }}" class="inline-flex items-center text-14"><x-home-icon /> Home</a>
      <a href="{{ route('show.user-dashboard') }}" class="inline-flex items-center text-14"><x-activity-icon /> Dashboard</a>

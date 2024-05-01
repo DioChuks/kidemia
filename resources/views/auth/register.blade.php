@@ -4,8 +4,8 @@
   <x-preloader />
   <div id="app" class="hidden">
     <main class="relative w-full h-max-screen flex flex-col justify-evenly items-center bg-brand-white element-before">
-      <div class="w-3-quarts h-50 flex flex-col p-5 items-center gap-5 bg-brand-white rounded-sm shadow-auth z-1">
-        <div class="h-8 r-img">
+      <div class="w-3-quarts h-55 flex flex-col p-5 items-center gap-5 bg-brand-white rounded-sm shadow-auth z-1 animate-slideDown sm-md-width h-md-sm sm-md-justify" style="--rWidthValue:95%;--rH:80%;--ct:space-evenly;">
+        <div class="h-8 h-md-sm" style="--rH:50px">
           <img src="{{ asset('images/KIDEMIA LOGO pro.png') }}" alt="logo-pro-1" class="w-inherit h-inherit" />
         </div>
         <header class="flex flex-col justify-between items-center gap-5" id="formHeader">
@@ -13,12 +13,11 @@
             <h2 class="font-sm text-center">Welcome to <span class="font-lg text-secondary">KIDEMIA</span></h2>
             <p class="font-xs text-dark">Complete your registration in just 4 steps</p>
           </div>
-
         </header>
-        <form id="body" class="w-3-quarts flex flex-col justify-between items-center gap-5"
-          action="{{ route('register') }}" method="POST">
+        <form id="body" class="w-3-quarts flex flex-col justify-between items-center gap-5 sm-md-width h-md-sm"
+          action="{{ route('register') }}" method="POST" style="--rWidthValue:90%;--rH:70%;">
           @csrf
-          <div id="pagination" class="flex items-center gap-5">
+          <div id="pagination" class="flex items-center gap-5 sm-md-width" style="--rWidthValue:90vw">
             @for ($i = 1; $i <= 4; $i++)
               <div
                 class="w-2 h-2 flex items-center p-5 rounded-full @if ($i === 1) bg-primary @else bg-light-grey @endif text-white text-center"
@@ -30,7 +29,7 @@
             @endfor
           </div>
 
-          <div id="steps" class="w-3-quarts sm-w-value" style="--rWidthValue:100%">
+          <div id="steps" class="w-3-quarts sm-md-width" style="--rWidthValue:100%">
             <div id="step" class="flex flex-col gap-5">
               <div id="inputBox" class="flex items-center bg-inputGrey gap-5 p-5 rounded-sm border border-primary">
                 <label for="email"><x-mail-icon /></label>
@@ -83,7 +82,7 @@
                 style="--textColor:#ccc;" type="button">continue</button>
             </div>
             {{-- start of student purpose step --}}
-            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5 h-md-sm" style="--rH:300px">
               <h2>What are you preparing for?</h2>
               <div class="w-3-quarts flex justify-between items-center gap-5">
                 @foreach ($purposes as $i => $purpose)
@@ -108,7 +107,7 @@
               </div>
             </div>
             {{-- start of guardian step for student --}}
-            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5">
+            <div id="step" class="w-full hidden flex-col justify-evenly items-center gap-5 h-md-sm" style="--rH:300px">
               <h2>Let’s meet your guardian</h2>
               <p class="text-center">Your guardian would receive reports on tests and exams you take</p>
               <div class="w-3-quarts flex items-center gap-5">

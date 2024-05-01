@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('purpose');
+            $table->string('category_id');
             $table->unsignedBigInteger('user_id');
+            $table->foreign('category_id')->on('categories')->references('id');
             $table->foreign('user_id')->on('users')->references('id');
             $table->string('guardian_email');
             $table->timestamps();

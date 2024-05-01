@@ -9,12 +9,23 @@ class ResultController extends Controller
     public function showTestResult($id)
     {
         // find the result of the request $id
-        return view("result.show-result", ['id' => $id]);
+        return view("result.show-test-result", ['id' => $id]);
     }
 
     public function showTestCorrection()
     {
-        return view("correction.index");
+        return view("correction.test.index");
+    }
+
+    public function showExamResult($id)
+    {
+        // find the result of the request $id
+        return view("result.show-exam-result", ['id' => $id]);
+    }
+
+    public function showExamCorrection()
+    {
+        return view("correction.exam.ecindex");
     }
 
     /**
