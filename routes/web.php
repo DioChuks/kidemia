@@ -86,8 +86,15 @@ Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamS
 // admin routes
 Route::get('/admin/report', [AdminController::class, 'showReport'])->name('admin.report');
 Route::get('/admin/subjects', [AdminController::class, 'showSubjects'])->name('admin.subjects');
+Route::post('/admin/create/subject', [AdminController::class, 'createSubject'])->name('admin.create.subject');
+Route::get('/admin/subject/{subject}', [AdminController::class, 'showSubject'])->name('admin.subject');
+Route::get('/admin/delete/subject/{subject}', [AdminController::class, 'deleteSubject'])->name('admin.delete.subject');
+Route::post('/admin/update/subject/{subject}', [AdminController::class, 'updateSubject'])->name('admin.update.subject');
+Route::get('/admin/remove/subject/{subject}/{topic}', [AdminController::class, 'deleteSubjectTopic'])->name('admin.delete.topic');
 Route::get('/admin/add/question', [AdminController::class, 'addQuestion'])->name('admin.add-question');
 Route::get('/admin/new/question/{subject}', [AdminController::class, 'newQuestion'])->name('admin.new-question');
 Route::post('/admin/create/q/{subject}', [AdminController::class, 'createQuestion'])->name('admin.create-question');
+Route::get('/admin/category', [AdminController::class, 'showCategory'])->name('admin.show.category');
+Route::post('/admin/category/create', [AdminController::class, 'createCategory'])->name('admin.create.category');
 
 // require __DIR__.'/auth.php';

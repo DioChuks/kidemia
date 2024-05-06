@@ -22,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_img',
+        'is_admin',
+        'is_guardian',
     ];
 
     /**
@@ -42,6 +45,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_admin' => 'boolean',
+        'is_guardian' => 'boolean',
     ];
 
     public function test(): HasMany

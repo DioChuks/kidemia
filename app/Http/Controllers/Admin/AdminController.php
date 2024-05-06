@@ -105,6 +105,60 @@ class AdminController extends Controller
         return view('admin.subjects', compact('subjects'));
     }
 
+    public function showSubject($subject)
+    {
+        // find the subject id and return its data
+        $subject_data = [
+            "topics" => [
+                [
+                    "id" => '1223',
+                    "name" => "Algebra",
+                    "questions" => [
+                        "What is x + 1 = 7? Find x",
+                        "Solve 299 - (-299)",
+                        "Solve 390 * (-390)",
+                    ],
+                ],
+                [
+                    "id" => '1224',
+                    "name" => "Calculus",
+                    "questions" => [
+                        "What is x + 1 = 7? Find x",
+                        "Solve 299 - (-299)",
+                        "Solve 390 * (-390)",
+                    ],
+                ],
+                [
+                    "id" => '1225',
+                    "name" => "Geometry",
+                    "questions" => [
+                        "What is x + 1 = 7? Find x",
+                        "Solve 299 - (-299)",
+                        "Solve 390 * (-390)",
+                    ],
+                ],
+            ]
+        ];
+        return view('admin.subject', compact('subject_data', 'subject'));
+    }
+
+    public function createSubject(Request $request)
+    {
+        return back();
+    }
+
+    public function updateSubject(Request $request)
+    {
+        // validate incoming data
+        // update the subject data
+        return back();
+    }
+
+    public function deleteSubject()
+    {
+        return back();
+    }
+
     public function addQuestion()
     {
         $subjects = [

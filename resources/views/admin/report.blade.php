@@ -102,8 +102,8 @@
         </div>
       </div>
       {{-- add subject modal --}}
-      <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all PendingApprovalModal" id="customModal">
-        <form class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content animate-slideDown" method="post" action="">
+      <div class="fixed hidden z-1 left-0 top-0 w-full h-full justify-center items-center overflow-auto bg-semi-black transition-all addSubjectModal" id="customModal">
+        <form class="relative w-half h-3-quarts flex flex-col items-center justify-evenly gap-5 bg-brand-white p-10 rounded-md modal-content animate-slideDown" method="post" action="{{ route('admin.create.subject') }}">
           @csrf
           <span class="absolute w-3 h-3 flex justify-center items-center top-2 right-2 text-dark text-20 rounded-md border border-dark cursor-pointer text-hover-color" id="closeModal" style="--textColor:crimson;">&times;</span>
           <h1 class="text-dark sm-text-value" style="--textSmVal:13px;">
@@ -116,12 +116,7 @@
               <option value="junior waec">junior waec</option>
               <option value="senior waec">senior waec</option>
             </select>
-            <select class="w-3-quarts h-4 pl-1 bg-primary-grad2 border-none outline-none rounded-sm" name="subject_category" id="subjectCategory">
-              <option value="0">Color of subject</option>
-              <option value="yellow">yellow</option>
-              <option value="purple">purple</option>
-              <option value="crimson">crimson</option>
-            </select>
+            <input class="w-3-quarts h-4 pl-1 bg-primary-grad2 text-14 border-none outline-none rounded-sm shadow-sm" id="subjectColor" name="subject_color" placeholder="Color of subject" data-huebee='{ "saturations": 3, "hues":6, "shades":3 }' />
           </div>
           <div class="w-3-quarts flex items-center justify-between gap-5">
             <button class="w-half p-10 border-none outline-none rounded-sm bg-primary-grad22 text-primary cursor-pointer" type="submit">Save and Close</button>

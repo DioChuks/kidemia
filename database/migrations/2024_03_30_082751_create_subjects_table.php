@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->uuid()->unique();
             $table->string('name');
-            $table->string('category_id');
+            $table->unsignedBigInteger('category_id');
+            $table->string('color')->default('#c83042');
             $table->timestamps();
         });
     }
