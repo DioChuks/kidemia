@@ -18,7 +18,8 @@ return new class extends Migration
             $table->json('topics_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('status');
+            $table->string('status')->default('pending');
+            $table->string('comment')->nullable();
             $table->string('score');
             $table->string('time_taken');
             $table->timestamps();

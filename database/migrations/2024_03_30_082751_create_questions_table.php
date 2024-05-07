@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid');
             $table->string('title');
             $table->json('options');
             $table->unsignedBigInteger('subject_id');

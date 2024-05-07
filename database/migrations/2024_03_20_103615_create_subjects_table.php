@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->unique();
             $table->string('name');
             $table->unsignedBigInteger('category_id');
             $table->string('color')->default('#c83042');

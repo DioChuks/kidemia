@@ -3,6 +3,7 @@
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\Profile\UserController;
 use App\Http\Controllers\ResultController;
@@ -22,9 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [DashboardController::class, 'index'])->name('home');
 
 Route::get('/take-test', [TestController::class, 'index'])->name('take.test');
 
@@ -38,7 +37,8 @@ Route::get('/loading', function () {
 Route::controller(AuthController::class)->group(function () {
     Route::prefix('auth')->group(function () {
         Route::get('/register', 'showRegister')->name('show.register');
-        Route::post('/register/onboard-user', 'register')->name('register');
+        Route::get('/register/type/{type}', 'showRegisterStep')->name('show.register.step');
+        Route::post('/register/onboard/new/user', 'register')->name('register');
         Route::get('/register-guardian', 'showRegisterGuardian')->name('show.register.guardian');
         Route::post('/guardian-registration', 'registerGuardian')->name('register.guardian');
         Route::get('/login', 'showLogin')->name('show.login');

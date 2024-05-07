@@ -3,15 +3,26 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function showRegister()
+    public function showRegister(): View
+    {
+        return view('auth.register');
+    }
+
+    public function showRegisterStep(string $type): View
     {
         $purposes = ['Common Entrance', 'Junior WAEC', 'Senior WAEC'];
-        return view('auth.register', compact('purposes'));
+        if ($type === 'school') {
+            return view('auth.step.school', compact('purposes'));
+        }
+
+        return view('auth.step.student', compact('purposes'));
     }
+
     public function showLogin()
     {
         return view('auth.login');
