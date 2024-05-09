@@ -286,6 +286,10 @@ select * {
     width: inherit;
 }
 
+.w-fit {
+    width: fit-content;
+}
+
 .w-5p {
     width: 5%;
 }
@@ -1260,6 +1264,13 @@ select * {
     );
 }
 
+.bg-conic-blue {
+    background: conic-gradient(
+        var(--secondaryBlueColor) calc(var(--progress) * 1%),
+        transparent calc(var(--progress) * 1%)
+    );
+}
+
 .bg-color {
     --bg: none;
     background-color: var(--bg);
@@ -1514,6 +1525,22 @@ select * {
 
 .top-left-radius-lg {
     border-radius: 20px 0px 0px 0px;
+}
+
+.top-right-radius {
+    border-top-right-radius: 10px;
+}
+
+.top-right-radius-lg {
+    border-top-right-radius: 20px;
+}
+
+.bottom-right-radius {
+    border-bottom-right-radius: 10px;
+}
+
+.bottom-right-radius-lg {
+    border-bottom-right-radius: 20px;
 }
 
 .border-bottom {

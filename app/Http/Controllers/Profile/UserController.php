@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,5 +24,15 @@ class UserController extends Controller
     public function showUserProfile()
     {
         return view('dashboard.user-profile.user-profile');
+    }
+
+    public function showUserHistory(string $type): View
+    {
+        // get the history data for the $type
+        // $testHistory or $examHistory data
+        if ($type === 'test') {
+            return view('dashboard.history.tests');
+        }
+        return view('dashboard.history.exams');
     }
 }

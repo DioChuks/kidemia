@@ -32,7 +32,7 @@
                 <input type="password" name="password" id="password" placeholder="Password"
                   class="w-full border-none outline-none bg-transparent" minlength="6" required />
               </div>
-              <a href="{{ route('show.forgot') }}" class="text-red">Forgot Password</a>
+              <a href="{{ route('show.forgot') }}" class="w-fit text-red text-hover-underline">Forgot Password</a>
               <button id="loginBtn"
                 class="w-full p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-pointer transition-all"
                 style="--textColor:#f7f7f7;" type="button">Login</button>

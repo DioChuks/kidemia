@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->unsignedBigInteger('subject_id');
             $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->string('old_percent')->default('0.00');
+            $table->string('new_percent')->default('0.00');
             $table->timestamps();
         });
     }

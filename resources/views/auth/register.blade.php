@@ -7,9 +7,9 @@
       <div
         class="w-3-quarts h-55 flex flex-col p-5 items-center gap-5 bg-brand-white rounded-sm shadow-auth z-1 animate-slideDown sm-md-width h-md-sm sm-md-justify"
         style="--rWidthValue:95%;--rH:80%;--ct:space-evenly;">
-        <div class="h-8 h-md-sm" style="--rH:50px">
+        <a href="{{ route('home') }}" class="h-8 h-md-sm" style="--rH:50px">
           <img src="{{ asset('images/KIDEMIA LOGO pro.png') }}" alt="logo-pro-1" class="w-inherit h-inherit" />
-        </div>
+        </a>
         <header class="flex flex-col justify-between items-center gap-5" id="formHeader">
           <div id="title">
             <h2 class="font-sm text-center">Welcome to <span class="font-lg text-secondary">KIDEMIA</span></h2>
@@ -39,8 +39,8 @@
               <div class="w-full flex justify-between">
                 @for ($i = 0; $i < 2; $i++)
                   <a href="{{ $i === 0 ? route('show.register.step', 'student') : route('show.register.step', 'school') }}"
-                    class ='relative flex flex-col gap-5 items-center p-10 border border-primary rounded-lg cursor-pointer transition-all label-user'
-                    for="user-{{ $i }}">
+                    class ='relative flex flex-col gap-5 items-center p-10 border border-primary rounded-lg cursor-pointer transition-all label-user bg-hover text-hover-color'
+                    for="user-{{ $i }}" style="--bgHoverColor:#f28729;--textColor:white;">
                     <div class="w-9 h-8">
                       <img src="{{ asset($i === 0 ? 'images/Student.png' : 'images/school.png') }}" alt="sub-img"
                         class="w-inherit h-inherit" />
@@ -49,9 +49,10 @@
                   </a>
                 @endfor
               </div>
-              <button id="biStep"
-                class="w-full p-10 bg-primary text-white text-hover-color font-xs rounded-sm border-none cursor-disallowed transition-all"
-                style="--textColor:#ccc;" type="button">continue</button>
+              <div class="w-full flex items-center justify-center">
+                <a id="backStep" href="{{ route('show.login') }}" class="w-full bg-primary text-white text-center font-xs cursor-pointer rounded-xs p-5">
+                    I have an account, Login </a>
+              </div>
             </div>
           </div>
         </div>

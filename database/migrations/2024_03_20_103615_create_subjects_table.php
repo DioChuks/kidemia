@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('category_id');
             $table->string('color')->default('#c83042');
+            $table->string('old_percent')->default('0.00');
+            $table->string('new_percent')->default('0.00');
             $table->timestamps();
         });
     }

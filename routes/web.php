@@ -79,6 +79,7 @@ Route::post('/terminate-test-exam', [ResultController::class, 'toggleTestOrExamS
         Route::prefix('account')->group(function () {
             Route::get('/user/dashboard', 'showUserDashboard')->name('show.user-dashboard');
             Route::get('/user/profile', 'showUserProfile')->name('show.user-profile');
+            Route::get('/user/history/{type}', 'showUserHistory')->name('show.user-history');
         });
     });
 // });

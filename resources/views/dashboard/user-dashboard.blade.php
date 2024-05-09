@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="w-3-quarts flex flex-col gap-5">
-                    <a href="" class="p-5 text-center rounded-sm text-13 font-lg bg-primary text-white">Exam History</a>
-                    <a href="" class="p-5 text-center rounded-sm text-13 font-lg bg-primary text-white">Test History</a>
+                    <a href="{{ route('show.user-history', 'exam') }}" class="p-5 text-center rounded-sm text-13 font-lg bg-primary text-white">Exam History</a>
+                    <a href="{{ route('show.user-history', 'test') }}" class="p-5 text-center rounded-sm text-13 font-lg bg-primary text-white">Test History</a>
                 </div>
 
                 <div class="w-full flex gap-5 p-5">
@@ -85,7 +85,7 @@
                       </div>
                       <h2 class="text-dark">English Language</h2>
                       <div class="w-full flex flex-col items-center gap-5">
-                        <a href="">View history</a>
+                        <a href="{{ route('show.user-history', 'test') }}">View history</a>
                         <a href="{{ route('take.test') }}" class="w-half p-10 text-center rounded-md text-13 font-lg bg-primary text-white">Take a Test</a>
                       </div>
                     </div>
