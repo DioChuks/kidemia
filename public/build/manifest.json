@@ -1,0 +1,16 @@
+{
+  "public/images/top-screen.jpeg": {
+    "file": "assets/top-screen-LeG2HUhw.jpeg",
+    "src": "public/images/top-screen.jpeg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BerAZG0V.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BKgz-kMT.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
